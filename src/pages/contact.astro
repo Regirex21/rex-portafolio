@@ -1,0 +1,164 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Contacto | Regina Servín"
+  description="Ponte en contacto con Regina Servín para oportunidades laborales, freelance o colaboración."
+>
+  <main class="min-h-screen overflow-x-hidden bg-[#040404] text-white">
+
+    <!-- HERO -->
+    <section class="relative mx-auto max-w-7xl px-6 pt-10 pb-20">
+
+      <div class="absolute left-0 top-10 h-[360px] w-[360px] rounded-full bg-[#86B84C]/10 blur-3xl"></div>
+
+      <div class="relative z-10 max-w-4xl">
+
+        <span class="inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-[#86B84C]">
+          Contacto
+        </span>
+
+        <h1 class="mt-6 text-5xl font-black leading-tight md:text-6xl">
+          Hablemos.<br />
+          <span class="text-[#86B84C]">Estoy disponible.</span>
+        </h1>
+
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
+          Disponible para prácticas, medio tiempo, freelance y oportunidades junior.
+          Si tienes una vacante, proyecto o colaboración, estaré encantada de conversar.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACT GRID -->
+    <section class="mx-auto max-w-7xl px-6 pb-20">
+
+      <div class="grid gap-8 lg:grid-cols-2">
+
+        <!-- LEFT -->
+        <div class="rounded-[32px] border border-white/10 bg-white/[0.03] p-8">
+
+          <h2 class="text-3xl font-black">
+            Información de contacto
+          </h2>
+
+          <div class="mt-8 space-y-6">
+
+            <!-- EMAIL -->
+            <div class="rounded-2xl border border-white/10 bg-[#0d0d0d] p-5">
+
+              <p class="text-sm text-zinc-500">
+                Correo electrónico
+              </p>
+
+              <div class="mt-3 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+
+                <span class="text-lg font-medium text-white break-all">
+                  r.servin19@hotmail.com
+                </span>
+
+                <button
+                  id="copyEmail"
+                  class="rounded-xl bg-[#86B84C] px-5 py-2 font-semibold text-black transition hover:scale-105"
+                >
+                  Copiar
+                </button>
+
+              </div>
+
+            </div>
+
+            <!-- LINKEDIN -->
+            <a
+              href="https://www.linkedin.com/in/regina-servín/"
+              target="_blank"
+              class="block rounded-2xl border border-white/10 bg-[#0d0d0d] p-5 transition hover:border-[#86B84C]"
+            >
+              <p class="text-sm text-zinc-500">LinkedIn</p>
+              <p class="mt-2 text-lg font-medium text-white">
+                linkedin.com/in/regina-servín
+              </p>
+            </a>
+
+            <!-- GITHUB -->
+            <a
+              href="https://github.com/Regirex21"
+              target="_blank"
+              class="block rounded-2xl border border-white/10 bg-[#0d0d0d] p-5 transition hover:border-[#86B84C]"
+            >
+              <p class="text-sm text-zinc-500">GitHub</p>
+              <p class="mt-2 text-lg font-medium text-white">
+                github.com/Regirex21
+              </p>
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="rounded-[32px] border border-white/10 bg-white/[0.03] p-8">
+
+          <h2 class="text-3xl font-black">
+            ¿Por qué contactarme?
+          </h2>
+
+          <div class="mt-8 space-y-5 text-zinc-300">
+
+            <div class="rounded-2xl border border-white/10 bg-[#0d0d0d] p-5">
+              Disponible para oportunidades junior y prácticas profesionales.
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-[#0d0d0d] p-5">
+              Interés en proyectos freelance y trabajo remoto.
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-[#0d0d0d] p-5">
+              Experiencia en liderazgo, organización y desarrollo web.
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-[#0d0d0d] p-5">
+              Respuesta profesional y disposición para aprender rápido.
+            </div>
+
+          </div>
+
+          <div class="mt-8 rounded-2xl border border-[#86B84C]/20 bg-[#86B84C]/10 p-5">
+            <p class="font-semibold text-[#86B84C]">
+              Mejor vía de contacto:
+            </p>
+
+            <p class="mt-2 text-zinc-200">
+              Correo electrónico o LinkedIn.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script>
+    const email = "r.servin19@hotmail.com";
+    const btn = document.getElementById("copyEmail");
+
+    if (btn) {
+      btn.addEventListener("click", async () => {
+        await navigator.clipboard.writeText(email);
+
+        const original = btn.textContent;
+        btn.textContent = "¡Copiado!";
+
+        setTimeout(() => {
+          btn.textContent = original;
+        }, 1600);
+      });
+    }
+  </script>
+</Layout>
