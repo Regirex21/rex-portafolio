@@ -1,0 +1,287 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Proyectos | Regina Servín"
+  description="Portafolio de proyectos de Regina Servín: desarrollo web, sistemas internos y documentación técnica."
+>
+  <main class="min-h-screen overflow-x-hidden bg-[#040404] text-white">
+
+    <!-- HERO -->
+    <section class="relative mx-auto max-w-7xl px-6 pt-10 pb-20">
+
+      <div class="absolute right-0 top-10 h-[420px] w-[420px] rounded-full bg-[#86B84C]/10 blur-3xl"></div>
+
+      <div class="relative z-10 max-w-4xl">
+
+        <span class="inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-[#86B84C]">
+          Proyectos
+        </span>
+
+        <h1 class="mt-6 text-5xl font-black leading-tight md:text-6xl">
+          Proyectos reales.<br />
+          <span class="text-[#86B84C]">Soluciones útiles.</span>
+        </h1>
+
+        <p class="mt-6 max-w-3xl text-lg leading-8 text-zinc-400">
+          Sitios web, plataformas internas y documentación creada con enfoque
+          práctico. Me interesa construir herramientas funcionales que mejoren
+          procesos y generen valor real.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- FEATURED PROJECT -->
+    <section class="mx-auto max-w-7xl px-6 pb-20">
+
+      <div class="rounded-[36px] border border-white/10 bg-white/[0.03] p-6 lg:p-10">
+
+        <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+
+          <!-- IMAGE -->
+          <div>
+            <img
+              src="/components/docs.png"
+              alt="FIRSTHub Docs"
+              class="h-full w-full rounded-3xl border border-white/10 object-cover"
+            />
+          </div>
+
+          <!-- CONTENT -->
+          <div>
+
+            <span class="text-sm font-semibold text-[#86B84C]">
+              Proyecto destacado
+            </span>
+
+            <h2 class="mt-4 text-4xl font-black">
+              FIRSTHub Docs
+            </h2>
+
+            <p class="mt-5 leading-8 text-zinc-400">
+              Sistema de documentación técnica diseñado para capacitación rápida,
+              onboarding eficiente y transferencia de conocimiento dentro de equipos.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+
+              <span class="rounded-full border border-white/10 px-4 py-2 text-sm">
+                Docs
+              </span>
+
+              <span class="rounded-full border border-white/10 px-4 py-2 text-sm">
+                UX Writing
+              </span>
+
+              <span class="rounded-full border border-white/10 px-4 py-2 text-sm">
+                Arquitectura
+              </span>
+
+              <span class="rounded-full border border-white/10 px-4 py-2 text-sm">
+                Escalabilidad
+              </span>
+
+            </div>
+
+            <div class="mt-8 flex flex-wrap gap-4">
+
+              <a
+                href="https://firsthub-docs.vercel.app"
+                target="_blank"
+                class="rounded-2xl bg-[#86B84C] px-6 py-3 font-semibold text-black transition hover:scale-105"
+              >
+                Ver proyecto →
+              </a>
+
+              <a
+                href="https://github.com/Regirex21"
+                target="_blank"
+                class="rounded-2xl border border-white/10 px-6 py-3 font-semibold transition hover:border-[#86B84C]"
+              >
+                GitHub
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PROJECT GRID -->
+    <section class="mx-auto max-w-7xl px-6 pb-20">
+
+      <div class="grid gap-8 lg:grid-cols-2">
+
+        <!-- ARIA -->
+        <div class="rounded-[32px] border border-white/10 bg-white/[0.03] p-6">
+
+          <img
+            src="/components/aria.png"
+            alt="ARIA Website"
+            class="h-56 w-full rounded-2xl border border-white/10 object-cover"
+          />
+
+          <h3 class="mt-6 text-3xl font-black">
+            ARIA Website
+          </h3>
+
+          <p class="mt-4 leading-7 text-zinc-400">
+            Sitio web moderno enfocado en branding, presencia digital y comunicación visual profesional.
+          </p>
+
+          <div class="mt-5 flex flex-wrap gap-3">
+            <span class="rounded-full border border-white/10 px-4 py-2 text-sm">Frontend</span>
+            <span class="rounded-full border border-white/10 px-4 py-2 text-sm">UI Design</span>
+            <span class="rounded-full border border-white/10 px-4 py-2 text-sm">Responsive</span>
+          </div>
+
+          <a
+            href="https://aria-steamex.vercel.app"
+            target="_blank"
+            class="mt-6 inline-block text-[#86B84C] transition hover:opacity-80"
+          >
+            Ver proyecto →
+          </a>
+
+        </div>
+
+        <!-- FIRSTHUB PLATFORM -->
+        <div class="rounded-[32px] border border-white/10 bg-white/[0.03] p-6">
+
+          <img
+            src="/components/firsthub.png"
+            alt="FIRSTHub Platform"
+            class="h-56 w-full rounded-2xl border border-white/10 object-cover"
+          />
+
+          <h3 class="mt-6 text-3xl font-black">
+            FIRSTHub Platform
+          </h3>
+
+          <p class="mt-4 leading-7 text-zinc-400">
+            Plataforma creada para centralizar recursos, organización interna y materiales de capacitación.
+          </p>
+
+          <div class="mt-5 flex flex-wrap gap-3">
+            <span class="rounded-full border border-white/10 px-4 py-2 text-sm">Astro</span>
+            <span class="rounded-full border border-white/10 px-4 py-2 text-sm">Tailwind</span>
+            <span class="rounded-full border border-white/10 px-4 py-2 text-sm">UX</span>
+          </div>
+
+          <a
+            href="https://firsthub.vercel.app"
+            target="_blank"
+            class="mt-6 inline-block text-[#86B84C] transition hover:opacity-80"
+          >
+            Ver proyecto →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="mx-auto max-w-7xl px-6 pb-20">
+
+      <div class="rounded-[32px] border border-white/10 bg-white/[0.03] p-8">
+
+        <h2 class="text-4xl font-black">
+          Experiencia aplicada
+        </h2>
+
+        <div class="mt-10 grid gap-8 md:grid-cols-2">
+
+          <div>
+            <h3 class="text-2xl font-bold text-[#86B84C]">
+              FIRST Robotics Leadership
+            </h3>
+
+            <p class="mt-4 leading-8 text-zinc-400">
+              Liderazgo en equipos de robótica, capacitación de miembros,
+              organización interna, planificación y resolución de problemas en entornos exigentes.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold text-[#86B84C]">
+              Mentalidad de construcción
+            </h3>
+
+            <p class="mt-4 leading-8 text-zinc-400">
+              Enfoque en convertir necesidades reales en soluciones funcionales,
+              iterando diseño, estructura y experiencia de usuario.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- LEARNINGS -->
+    <section class="mx-auto max-w-7xl px-6 pb-20">
+
+      <h2 class="text-4xl font-black">
+        Lo que he aprendido construyendo
+      </h2>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+
+        <div class="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+          La claridad visual importa.
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+          Los sistemas simples escalan mejor.
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+          Iterar mejora cualquier producto.
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+          El usuario siempre va primero.
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="mx-auto max-w-7xl px-6 pb-24">
+
+      <div class="rounded-[32px] border border-white/10 bg-white/[0.03] p-10 md:flex md:items-center md:justify-between">
+
+        <div>
+          <h2 class="text-4xl font-black">
+            ¿Trabajamos juntos?
+          </h2>
+
+          <p class="mt-4 text-zinc-400">
+            Disponible para oportunidades junior, freelance o proyectos remotos.
+          </p>
+        </div>
+
+        <a
+          href="/contact"
+          class="mt-6 inline-block rounded-2xl bg-[#86B84C] px-7 py-4 font-semibold text-black transition hover:scale-105 md:mt-0"
+        >
+          Contactar →
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+</Layout>
