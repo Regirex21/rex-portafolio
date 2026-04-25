@@ -1,17 +1,557 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <main class="min-h-screen overflow-x-hidden bg-[#040404] text-white relative">
+
+    <!-- BACKGROUND GLOWS -->
+    <div class="pointer-events-none absolute top-24 right-10 h-[560px] w-[560px] rounded-full bg-[#86B84C]/10 blur-[120px]"></div>
+    <div class="pointer-events-none absolute top-[820px] left-[-120px] h-[320px] w-[320px] rounded-full bg-[#86B84C]/4 blur-[100px]"></div>
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-[#040404]/85 backdrop-blur-xl">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+
+        <!-- BRAND -->
+        <a href="#" class="flex items-center gap-3">
+          <div class="rounded-xl border border-[#86B84C]/20 bg-[#86B84C]/10 px-3 py-2 text-xl font-black text-[#86B84C]">
+            RS
+          </div>
+
+          <span class="hidden text-lg font-semibold text-zinc-200 md:block">
+            Regina Servín
+          </span>
+        </a>
+
+        <!-- MENU -->
+        <div class="hidden md:flex items-center gap-10 text-sm font-medium text-zinc-400">
+          <a href="#" class="text-[#86B84C]">Inicio</a>
+          <a href="#projects" class="hover:text-white transition">Proyectos</a>
+          <a href="#about" class="hover:text-white transition">Sobre mí</a>
+          <a href="#contact" class="hover:text-white transition">Contacto</a>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="hidden md:flex items-center gap-3">
+
+          <div class="rounded-xl border border-white/10 px-4 py-2 text-sm text-zinc-300">
+            ES <span class="px-1 text-zinc-600">|</span> EN
+          </div>
+
+          <a
+            href="https://github.com/Regirex21"
+            target="_blank"
+            class="rounded-xl border border-white/10 px-4 py-2 text-sm text-zinc-300 transition hover:border-[#86B84C]"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/regina-servín/"
+            target="_blank"
+            class="rounded-xl border border-white/10 px-4 py-2 text-sm text-zinc-300 transition hover:border-[#86B84C]"
+          >
+            LinkedIn
+          </a>
+
+        </div>
+
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="relative mx-auto max-w-7xl px-6 pt-20 pb-28">
+
+      <div class="grid items-center gap-20 lg:grid-cols-2">
+
+        <!-- LEFT -->
+        <div>
+
+          <!-- AVAILABLE BADGE -->
+          <div class="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-[#101010] px-5 py-3">
+            <span class="h-3 w-3 rounded-full bg-[#86B84C] shadow-[0_0_15px_#86B84C]"></span>
+
+            <span class="text-sm font-medium text-zinc-200">
+              Disponible para trabajar
+            </span>
+          </div>
+
+          <!-- NAME -->
+          <h1 class="text-5xl font-black leading-[1] tracking-[-0.03em] md:text-6xl xl:text-[4.8rem] whitespace-nowrap">
+            Regina <span class="text-[#86B84C]">Servín</span>
+          </h1>
+
+          <!-- ROLE -->
+          <p class="mt-8 max-w-3xl text-2xl font-medium leading-snug text-zinc-200">
+            Estudiante de Ingeniería en Desarrollo de Software <br />
+            | Junior Developer
+          </p>
+
+          <!-- DESCRIPTION -->
+          <p class="mt-8 max-w-2xl text-lg leading-relaxed text-zinc-400">
+            Construyo soluciones web funcionales, sistemas organizados y
+            documentación técnica. Me apasiona resolver problemas, aprender
+            rápido y trabajar en equipo.
+          </p>
+
+          <!-- BUTTONS -->
+          <div class="mt-10 flex flex-wrap gap-4">
+
+            <a
+              href="#projects"
+              class="rounded-2xl bg-[#86B84C] px-8 py-4 text-lg font-semibold text-black shadow-[0_0_24px_rgba(134,184,76,0.18)] transition hover:scale-[1.02] hover:bg-[#93c957]"
+            >
+              Ver proyectos →
+            </a>
+
+              <!-- LINKEDIN -->
+            <a
+              href="https://www.linkedin.com/in/regina-servín/"
+              target="_blank"
+              class="flex h-[58px] w-[58px] items-center justify-center rounded-2xl border border-white/10 bg-[#101010] transition hover:border-[#86B84C]"
+            >
+            <img
+              src="icons/icons8-linkedin (1).svg"
+              alt="LinkedIn"
+              class="h-9 w-9"
+            />
+            </a>
+
+         <!-- GITHUB -->
+            <a
+              href="https://github.com/Regirex21"
+              target="_blank"
+              class="flex h-[58px] w-[58px] items-center justify-center rounded-2xl border border-white/10 bg-[#101010] transition hover:border-[#86B84C]"
+            >
+            <img
+              src="icons/github-142-svgrepo-com.svg"
+              alt="GitHub"
+              class="h-8 w-8"
+            />
+            </a>
+
+        </div>
+
+          <!-- EMAIL BAR -->
+          <div class="mt-8 flex max-w-xl items-center justify-between rounded-2xl border border-white/10 bg-[#101010] px-5 py-4">
+            <span class="text-zinc-300">r.servin19@hotmail.com</span>
+
+            <button
+              id="copyEmail2"
+              class="font-medium text-[#86B84C] transition hover:opacity-80"
+            >
+              Copiar
+            </button>
+          </div>
+
+        </div>
+
+<!-- RIGHT VISUAL -->
+<div class="hidden lg:flex justify-center">
+
+  <div
+    id="heroCardWrap"
+    class="relative w-full max-w-xl perspective-[1400px]"
+  >
+
+    <!-- glow -->
+    <div
+      class="pointer-events-none absolute inset-0 rounded-[32px] bg-[#86B84C]/8 blur-[90px]"
+    ></div>
+
+    <!-- card -->
+    <div
+      id="heroCard"
+      class="relative rounded-[32px] border border-white/10 bg-[#090909] p-8 shadow-[0_30px_90px_rgba(0,0,0,0.55)] transition-transform duration-200"
+    >
+
+      <!-- top dots -->
+      <div class="mb-8 flex gap-2">
+        <div class="h-3 w-3 rounded-full bg-[#8b2a2a]"></div>
+        <div class="h-3 w-3 rounded-full bg-[#8b6a2a]"></div>
+        <div class="h-3 w-3 rounded-full bg-[#2f8b2a]"></div>
+      </div>
+
+      <p class="mb-6 text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
+        Developer Profile
+      </p>
+
+      <pre class="overflow-hidden rounded-2xl bg-[#050505] p-6 text-[15px] leading-8 text-zinc-300">
+<code id="typingCode"></code><span class="animate-pulse text-[#86B84C]">|</span>
+      </pre>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  /* typing */
+  const code = `const Regina = {
+  role: "Junior Developer",
+  skills: ["Java", "Python", "Astro"],
+  teamwork: true,
+  leadership: true,
+  available: true
+};`;
+
+  const target = document.getElementById("typingCode");
+  let i = 0;
+
+  function typeCode() {
+    if (!target) return;
+    if (i < code.length) {
+      target.textContent += code.charAt(i);
+      i++;
+      setTimeout(typeCode, 24);
+    }
+  }
+
+  typeCode();
+
+/* parallax hover */
+
+const wrap = document.getElementById("heroCardWrap") as HTMLDivElement | null;
+const card = document.getElementById("heroCard") as HTMLDivElement | null;
+
+if (wrap && card) {
+  let targetX = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+  function animate() {
+    currentX += (targetX - currentX) * 0.08;
+    currentY += (targetY - currentY) * 0.08;
+
+    if (!card) return;
+
+card.style.transform = `
+      rotateX(${currentY}deg)
+      rotateY(${currentX}deg)
+      translateY(-4px)
+    `;
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+
+  wrap.addEventListener("mousemove", (e) => {
+    const rect = wrap.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    targetX = (x - centerX) / 22;
+    targetY = -(y - centerY) / 22;
+  });
+
+  wrap.addEventListener("mouseleave", () => {
+    targetX = 0;
+    targetY = 0;
+  });
+}
+</script>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="mx-auto max-w-7xl px-6 pb-28">
+
+      <div class="mb-10 flex items-center justify-between">
+        <h2 class="text-5xl font-black tracking-tight">
+          Proyectos destacados
+        </h2>
+
+        <a
+          href="https://github.com/Regirex21"
+          target="_blank"
+          class="text-[#86B84C] transition hover:opacity-80"
+        >
+          Ver todos →
+        </a>
+      </div>
+
+      <div class="grid gap-6 lg:grid-cols-3">
+
+        <!-- ARIA -->
+        <a
+          href="https://aria-steamex.vercel.app"
+          target="_blank"
+          class="group rounded-3xl border border-white/10 bg-[#0b0b0b] p-4 transition hover:-translate-y-1 hover:border-[#86B84C]"
+        >
+          <img
+            src="src/components/aria.png"
+            alt="ARIA Website"
+            class="h-48 w-full rounded-2xl object-cover"
+          />
+
+          <h3 class="mt-5 text-2xl font-bold transition group-hover:text-[#86B84C]">
+            ARIA Website
+          </h3>
+
+          <p class="mt-3 text-zinc-400">
+            Sitio moderno para branding y presencia digital.
+          </p>
+        </a>
+
+        <!-- FIRSTHUB -->
+        <a
+          href="https://firsthub.vercel.app"
+          target="_blank"
+          class="group rounded-3xl border border-white/10 bg-[#0b0b0b] p-4 transition hover:-translate-y-1 hover:border-[#86B84C]"
+        >
+          <img
+            src="src/components/firsthub.png"
+            alt="FIRSTHub"
+            class="h-48 w-full rounded-2xl object-cover"
+          />
+
+          <h3 class="mt-5 text-2xl font-bold transition group-hover:text-[#86B84C]">
+            FIRSTHub Platform
+          </h3>
+
+          <p class="mt-3 text-zinc-400">
+            Plataforma de organización y recursos.
+          </p>
+        </a>
+
+        <!-- DOCS -->
+        <a
+          href="https://firsthub-docs.vercel.app"
+          target="_blank"
+          class="group rounded-3xl border border-white/10 bg-[#0b0b0b] p-4 transition hover:-translate-y-1 hover:border-[#86B84C]"
+        >
+          <img
+            src="src/components/docs.png"
+            alt="FIRSTHub Docs"
+            class="h-48 w-full rounded-2xl object-cover"
+          />
+
+          <h3 class="mt-5 text-2xl font-bold transition group-hover:text-[#86B84C]">
+            FIRSTHub Docs
+          </h3>
+
+          <p class="mt-3 text-zinc-400">
+            Documentación técnica estructurada.
+          </p>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="mx-auto max-w-7xl px-6 pb-28">
+
+  <div class="rounded-[32px] border border-white/10 bg-[#0b0b0b] p-10">
+
+    <h2 class="text-5xl font-black tracking-tight">
+      ¿Por qué trabajar conmigo?
+    </h2>
+
+    <!-- BENEFITS -->
+    <div class="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+
+      <div>
+        <img src="icons/alt-plus-lens-svgrepo-com.svg" class="h-10 w-10 mb-4" />
+        <h3 class="text-xl font-semibold text-[#86B84C]">Enfoque en soluciones</h3>
+        <p class="mt-3 text-sm leading-relaxed text-zinc-400">
+          Me gusta entender el problema a fondo y construir soluciones prácticas.
+        </p>
+      </div>
+
+      <div>
+        <img src="icons/plus-user-profile-svgrepo-com.svg" class="h-10 w-10 mb-4" />
+        <h3 class="text-xl font-semibold text-[#86B84C]">Trabajo en equipo</h3>
+        <p class="mt-3 text-sm leading-relaxed text-zinc-400">
+          Liderazgo y colaboración con equipos diversos.
+        </p>
+      </div>
+
+      <div>
+        <img src="icons/alt-square-quill-svgrepo-com.svg" class="h-10 w-10 mb-4" />
+        <h3 class="text-xl font-semibold text-[#86B84C]">Aprendizaje constante</h3>
+        <p class="mt-3 text-sm leading-relaxed text-zinc-400">
+          Siempre aprendiendo nuevas herramientas y mejores prácticas.
+        </p>
+      </div>
+
+      <div>
+        <img src="icons/left-text-bubble-svgrepo-com.svg" class="h-10 w-10 mb-4" />
+        <h3 class="text-xl font-semibold text-[#86B84C]">Liderazgo con propósito</h3>
+        <p class="mt-3 text-sm leading-relaxed text-zinc-400">
+          Experiencia guiando equipos en proyectos reales.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- SKILLS -->
+    <div class="mt-12 flex flex-wrap gap-3">
+
+      <span class="rounded-full border border-white/10 px-4 py-2 text-sm bg-[#111]">Java</span>
+      <span class="rounded-full border border-white/10 px-4 py-2 text-sm bg-[#111]">Python</span>
+      <span class="rounded-full border border-white/10 px-4 py-2 text-sm bg-[#111]">HTML</span>
+      <span class="rounded-full border border-white/10 px-4 py-2 text-sm bg-[#111]">CSS</span>
+      <span class="rounded-full border border-white/10 px-4 py-2 text-sm bg-[#111]">Astro</span>
+      <span class="rounded-full border border-white/10 px-4 py-2 text-sm bg-[#111]">Git</span>
+      <span class="rounded-full border border-white/10 px-4 py-2 text-sm bg-[#111]">GitHub</span>
+      <span class="rounded-full border border-white/10 px-4 py-2 text-sm bg-[#111]">VS Code</span>
+      <span class="rounded-full border border-white/10 px-4 py-2 text-sm bg-[#111]">Android Studio</span>
+      <span class="rounded-full border border-white/10 px-4 py-2 text-sm bg-[#111]">Notion</span>
+
+    </div>
+
+    <!-- INFO BAR -->
+    <div class="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+
+  <!-- UNIVERSIDAD -->
+  <div class="rounded-2xl border border-white/10 bg-[#111] p-5">
+    <div class="flex items-start gap-4">
+      <img src="icons/star-svgrepo-com.svg" class="h-8 w-8 mt-1" alt="Universidad" />
+
+      <div>
+        <p class="text-sm text-zinc-500">Universidad</p>
+        <p class="mt-1 font-semibold">Tecmilenio</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- IDIOMAS -->
+  <div class="rounded-2xl border border-white/10 bg-[#111] p-5">
+    <div class="flex items-start gap-4">
+      <img src="icons/earth-svgrepo-com.svg" class="h-8 w-8 mt-1" alt="Idiomas" />
+
+      <div>
+        <p class="text-sm text-zinc-500">Idiomas</p>
+        <p class="mt-1 font-semibold">Español / English B2+</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DISPONIBILIDAD -->
+  <div class="rounded-2xl border border-white/10 bg-[#111] p-5">
+    <div class="flex items-start gap-4">
+      <img src="icons/watch-svgrepo-com.svg" class="h-8 w-8 mt-1" alt="Disponibilidad" />
+
+      <div>
+        <p class="text-sm text-zinc-500">Disponibilidad</p>
+        <p class="mt-1 font-semibold">Medio tiempo / Freelance</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- UBICACION -->
+  <div class="rounded-2xl border border-white/10 bg-[#111] p-5">
+    <div class="flex items-start gap-4">
+      <img src="icons/location-point-svgrepo-com.svg" class="h-8 w-8 mt-1" alt="Ubicación" />
+
+      <div>
+        <p class="text-sm text-zinc-500">Ubicación</p>
+        <p class="mt-1 font-semibold">CDMX / Remoto</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  </div>
+
+</section>
+    <!-- CONTACT -->
+    <section id="contact" class="mx-auto max-w-7xl px-6 pb-24">
+  <div class="rounded-[32px] border border-white/10 bg-[#0b0b0b] p-10">
+
+    <div class="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
+
+      <!-- TEXT -->
+      <div>
+        <h2 class="text-5xl font-black tracking-tight">
+          ¿Tienes un proyecto en mente?
+        </h2>
+
+        <p class="mt-4 max-w-2xl text-lg text-zinc-400">
+          Disponible para medio tiempo, freelance y oportunidades remotas.
+        </p>
+      </div>
+
+      <!-- BUTTON -->
+      <div>
+        <a
+          href="mailto:r.servin19@hotmail.com"
+          class="inline-flex rounded-2xl bg-[#86B84C] px-8 py-4 text-lg font-semibold text-black transition hover:opacity-90"
+        >
+          Hablemos →
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 py-8">
+  <div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 text-sm text-zinc-500 md:flex-row md:items-center md:justify-between">
+
+    <div>
+      <p class="font-medium text-zinc-300">Regina Servín</p>
+      <p>Software Developer</p>
+    </div>
+
+    <div class="flex items-center gap-5">
+      <a
+        href="https://github.com/Regirex21"
+        target="_blank"
+        class="hover:text-[#86B84C] transition"
+      >
+        GitHub
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/regina-servín/"
+        target="_blank"
+        class="hover:text-[#86B84C] transition"
+      >
+        LinkedIn
+      </a>
+
+      <a
+        href="mailto:r.servin19@hotmail.com"
+        class="hover:text-[#86B84C] transition"
+      >
+        Email
+      </a>
+    </div>
+
+    <p>©2026</p>
+
+  </div>
+</footer>
+
+  </main>
+
+  <script>
+    const email = "r.servin19@hotmail.com";
+
+    function bindCopy(id: string) {
+      const btn = document.getElementById(id);
+
+      btn?.addEventListener("click", async () => {
+        await navigator.clipboard.writeText(email);
+        btn.textContent = "¡Copiado!";
+
+        setTimeout(() => {
+          btn.textContent = "Copiar";
+        }, 1600);
+      });
+    }
+
+    bindCopy("copyEmail");
+    bindCopy("copyEmail2");
+  </script>
+</Layout>

@@ -1,0 +1,21 @@
+---
+import "../styles/global.css";
+
+const title = "Regina Servín | Portfolio";
+const description = "Software engineering student portfolio.";
+
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+
+  <body class="bg-[#07110b] text-white antialiased selection:bg-green-400 selection:text-black">
+    <slot />
+  </body>
+</html>
