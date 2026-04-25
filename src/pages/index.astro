@@ -3,15 +3,17 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <main class="min-h-screen overflow-x-hidden bg-[#040404] text-white relative">
-
+  <main class="min-h-screen overflow-x-hidden bg-[#040404] text-white relative pt-18">
     <!-- BACKGROUND GLOWS -->
     <div class="pointer-events-none absolute top-24 right-10 h-[560px] w-[560px] rounded-full bg-[#86B84C]/10 blur-[120px]"></div>
     <div class="pointer-events-none absolute top-[820px] left-[-120px] h-[320px] w-[320px] rounded-full bg-[#86B84C]/4 blur-[100px]"></div>
 
     <!-- NAVBAR -->
-    <header class="sticky top-0 z-50 border-b border-white/10 bg-[#040404]/85 backdrop-blur-xl">
-      <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+    <header
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#040404]/65 backdrop-blur-xl transition-all duration-300"
+>
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
 
         <!-- BRAND -->
         <a href="#" class="flex items-center gap-3">
@@ -25,7 +27,7 @@ import Layout from "../layouts/Layout.astro";
         </a>
 
         <!-- MENU -->
-        <div class="hidden md:flex items-center gap-10 text-sm font-medium text-zinc-400">
+        <div class="hidden md:flex items-center gap-10 text-sm font-medium text-zinc-400 ">
           <a href="#" class="text-[#86B84C]">Inicio</a>
           <a href="#projects" class="hover:text-white transition">Proyectos</a>
           <a href="#about" class="hover:text-white transition">Sobre mí</a>
@@ -61,7 +63,7 @@ import Layout from "../layouts/Layout.astro";
     </header>
 
     <!-- HERO -->
-    <section class="relative mx-auto max-w-7xl px-6 pt-20 pb-28">
+    <section class="relative mx-auto max-w-7xl px-6 pt-20 pb-28 reveal">
 
       <div class="grid items-center gap-20 lg:grid-cols-2">
 
@@ -69,7 +71,7 @@ import Layout from "../layouts/Layout.astro";
         <div>
 
           <!-- AVAILABLE BADGE -->
-          <div class="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-[#101010] px-5 py-3">
+          <div class="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-[#101010] px-5 py-3 reveal">
             <span class="h-3 w-3 rounded-full bg-[#86B84C] shadow-[0_0_15px_#86B84C]"></span>
 
             <span class="text-sm font-medium text-zinc-200">
@@ -78,25 +80,25 @@ import Layout from "../layouts/Layout.astro";
           </div>
 
           <!-- NAME -->
-          <h1 class="text-5xl font-black leading-[1] tracking-[-0.03em] md:text-6xl xl:text-[4.8rem] whitespace-nowrap">
+          <h1 class="text-5xl font-black leading-[1] tracking-[-0.03em] md:text-6xl xl:text-[4.8rem] whitespace-nowrap reveal">
             Regina <span class="text-[#86B84C]">Servín</span>
           </h1>
 
           <!-- ROLE -->
-          <p class="mt-8 max-w-3xl text-2xl font-medium leading-snug text-zinc-200">
+          <p class="mt-8 max-w-3xl text-2xl font-medium leading-snug text-zinc-200 reveal">
             Estudiante de Ingeniería en Desarrollo de Software <br />
             | Junior Developer
           </p>
 
           <!-- DESCRIPTION -->
-          <p class="mt-8 max-w-2xl text-lg leading-relaxed text-zinc-400">
+          <p class="mt-8 max-w-2xl text-lg leading-relaxed text-zinc-400 reveal">
             Construyo soluciones web funcionales, sistemas organizados y
             documentación técnica. Me apasiona resolver problemas, aprender
             rápido y trabajar en equipo.
           </p>
 
           <!-- BUTTONS -->
-          <div class="mt-10 flex flex-wrap gap-4">
+          <div class="mt-10 flex flex-wrap gap-4 items-center reveal">
 
             <a
               href="#projects"
@@ -148,7 +150,7 @@ import Layout from "../layouts/Layout.astro";
         </div>
 
 <!-- RIGHT VISUAL -->
-<div class="hidden lg:flex justify-center">
+<div class="hidden lg:flex justify-center reveal">
 
   <div
     id="heroCardWrap"
@@ -163,7 +165,7 @@ import Layout from "../layouts/Layout.astro";
     <!-- card -->
     <div
       id="heroCard"
-      class="relative rounded-[32px] border border-white/10 bg-[#090909] p-8 shadow-[0_30px_90px_rgba(0,0,0,0.55)] transition-transform duration-200"
+      class="relative rounded-[32px] border border-white/10 bg-[#090909] p-8 shadow-[0_30px_90px_rgba(0,0,0,0.55)] transition-transform duration-200 reveal"
     >
 
       <!-- top dots -->
@@ -185,84 +187,13 @@ import Layout from "../layouts/Layout.astro";
   </div>
 </div>
 
-<script>
-  /* typing */
-  const code = `const Regina = {
-  role: "Junior Developer",
-  skills: ["Java", "Python", "Astro"],
-  teamwork: true,
-  leadership: true,
-  available: true
-};`;
-
-  const target = document.getElementById("typingCode");
-  let i = 0;
-
-  function typeCode() {
-    if (!target) return;
-    if (i < code.length) {
-      target.textContent += code.charAt(i);
-      i++;
-      setTimeout(typeCode, 24);
-    }
-  }
-
-  typeCode();
-
-/* parallax hover */
-
-const wrap = document.getElementById("heroCardWrap") as HTMLDivElement | null;
-const card = document.getElementById("heroCard") as HTMLDivElement | null;
-
-if (wrap && card) {
-  let targetX = 0;
-  let targetY = 0;
-  let currentX = 0;
-  let currentY = 0;
-
-  function animate() {
-    currentX += (targetX - currentX) * 0.08;
-    currentY += (targetY - currentY) * 0.08;
-
-    if (!card) return;
-
-card.style.transform = `
-      rotateX(${currentY}deg)
-      rotateY(${currentX}deg)
-      translateY(-4px)
-    `;
-
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-
-  wrap.addEventListener("mousemove", (e) => {
-    const rect = wrap.getBoundingClientRect();
-
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    targetX = (x - centerX) / 22;
-    targetY = -(y - centerY) / 22;
-  });
-
-  wrap.addEventListener("mouseleave", () => {
-    targetX = 0;
-    targetY = 0;
-  });
-}
-</script>
       </div>
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="mx-auto max-w-7xl px-6 pb-28">
+    <section id="projects" class="mx-auto max-w-7xl px-6 pb-28 reveal">
 
-      <div class="mb-10 flex items-center justify-between">
+      <div class="mb-10 flex items-center justify-between reveal">
         <h2 class="text-5xl font-black tracking-tight">
           Proyectos destacados
         </h2>
@@ -282,7 +213,7 @@ card.style.transform = `
         <a
           href="https://aria-steamex.vercel.app"
           target="_blank"
-          class="group rounded-3xl border border-white/10 bg-[#0b0b0b] p-4 transition hover:-translate-y-1 hover:border-[#86B84C]"
+          class="group rounded-3xl border border-white/10 bg-[#0b0b0b] p-4 transition hover:-translate-y-1 hover:border-[#86B84C] reveal"
         >
           <img
             src="components/aria.png"
@@ -290,7 +221,7 @@ card.style.transform = `
             class="h-48 w-full rounded-2xl object-cover"
           />
 
-          <h3 class="mt-5 text-2xl font-bold transition group-hover:text-[#86B84C]">
+          <h3 class="mt-5 text-2xl font-bold transition group-hover:text-[#86B84C] reveal">
             ARIA Website
           </h3>
 
@@ -303,7 +234,7 @@ card.style.transform = `
         <a
           href="https://firsthub.vercel.app"
           target="_blank"
-          class="group rounded-3xl border border-white/10 bg-[#0b0b0b] p-4 transition hover:-translate-y-1 hover:border-[#86B84C]"
+          class="group rounded-3xl border border-white/10 bg-[#0b0b0b] p-4 transition hover:-translate-y-1 hover:border-[#86B84C] reveal"
         >
           <img
             src="components/firsthub.png"
@@ -311,7 +242,7 @@ card.style.transform = `
             class="h-48 w-full rounded-2xl object-cover"
           />
 
-          <h3 class="mt-5 text-2xl font-bold transition group-hover:text-[#86B84C]">
+          <h3 class="mt-5 text-2xl font-bold transition group-hover:text-[#86B84C] reveal">
             FIRSTHub Platform
           </h3>
 
@@ -324,7 +255,7 @@ card.style.transform = `
         <a
           href="https://firsthub-docs.vercel.app"
           target="_blank"
-          class="group rounded-3xl border border-white/10 bg-[#0b0b0b] p-4 transition hover:-translate-y-1 hover:border-[#86B84C]"
+          class="group rounded-3xl border border-white/10 bg-[#0b0b0b] p-4 transition hover:-translate-y-1 hover:border-[#86B84C] reveal"
         >
           <img
             src="components/docs.png"
@@ -332,7 +263,7 @@ card.style.transform = `
             class="h-48 w-full rounded-2xl object-cover"
           />
 
-          <h3 class="mt-5 text-2xl font-bold transition group-hover:text-[#86B84C]">
+          <h3 class="mt-5 text-2xl font-bold transition group-hover:text-[#86B84C] reveal">
             FIRSTHub Docs
           </h3>
 
@@ -347,8 +278,7 @@ card.style.transform = `
     <!-- ABOUT -->
     <section id="about" class="mx-auto max-w-7xl px-6 pb-28">
 
-  <div class="rounded-[32px] border border-white/10 bg-[#0b0b0b] p-10">
-
+  <div class="rounded-[32px] border border-white/10 bg-[#0b0b0b] p-10 reveal">
     <h2 class="text-5xl font-black tracking-tight">
       ¿Por qué trabajar conmigo?
     </h2>
@@ -407,7 +337,7 @@ card.style.transform = `
     </div>
 
     <!-- INFO BAR -->
-    <div class="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+    <div class="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4 reveal">
 
   <!-- UNIVERSIDAD -->
   <div class="rounded-2xl border border-white/10 bg-[#111] p-5">
@@ -466,7 +396,7 @@ card.style.transform = `
     <section id="contact" class="mx-auto max-w-7xl px-6 pb-24">
   <div class="rounded-[32px] border border-white/10 bg-[#0b0b0b] p-10">
 
-    <div class="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
+    <div class="grid items-center gap-8 lg:grid-cols-[1fr_auto] reveal">
 
       <!-- TEXT -->
       <div>
@@ -536,22 +466,138 @@ card.style.transform = `
   </main>
 
   <script>
-    const email = "r.servin19@hotmail.com";
+/* EMAIL COPY */
+const email = "r.servin19@hotmail.com";
 
-    function bindCopy(id: string) {
-      const btn = document.getElementById(id);
+function bindCopy(id: string) {
+  const btn = document.getElementById(id);
 
-      btn?.addEventListener("click", async () => {
-        await navigator.clipboard.writeText(email);
-        btn.textContent = "¡Copiado!";
+  if (!btn) return;
 
-        setTimeout(() => {
-          btn.textContent = "Copiar";
-        }, 1600);
-      });
+  btn.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(email);
+
+    const original = btn.textContent;
+    btn.textContent = "¡Copiado!";
+
+    setTimeout(() => {
+      btn.textContent = original;
+    }, 1600);
+  });
+}
+
+bindCopy("copyEmail");
+bindCopy("copyEmail2");
+
+
+/* HERO TYPING */
+const code = `const Regina = {
+  role: "Junior Developer",
+  skills: ["Java", "Python", "Astro"],
+  teamwork: true,
+  leadership: true,
+  available: true
+};`;
+
+const target = document.getElementById("typingCode") as HTMLElement | null;
+
+if (target) {
+  let i = 0;
+
+  function typeCode() {
+    if (i < code.length) {
+      if (!target) return;
+
+target.textContent += code.charAt(i);
+      i++;
+      setTimeout(typeCode, 22);
     }
+  }
 
-    bindCopy("copyEmail");
-    bindCopy("copyEmail2");
-  </script>
+  typeCode();
+}
+
+
+/* HERO CARD SMOOTH PARALLAX */
+const wrap = document.getElementById("heroCardWrap") as HTMLDivElement | null;
+const card = document.getElementById("heroCard") as HTMLDivElement | null;
+
+if (wrap && card) {
+  let targetX = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+  function animate() {
+    currentX += (targetX - currentX) * 0.06;
+    currentY += (targetY - currentY) * 0.06;
+
+    if (!card) return;
+
+card.style.transform = `
+      rotateX(${currentY}deg)
+      rotateY(${currentX}deg)
+      translateY(-4px)
+    `;
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+
+  wrap.addEventListener("mousemove", (e) => {
+    const rect = wrap.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    targetX = (x - centerX) / 28;
+    targetY = -(y - centerY) / 28;
+  });
+
+  wrap.addEventListener("mouseleave", () => {
+    targetX = 0;
+    targetY = 0;
+  });
+}
+
+
+/* SCROLL REVEAL */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".reveal").forEach((el) => {
+  observer.observe(el);
+});
+
+
+/* NAVBAR SCROLL EFFECT */
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+  if (!navbar) return;
+
+  if (window.scrollY > 30) {
+    navbar.classList.add(
+      "bg-black/80",
+      "border-white/10",
+      "shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
+    );
+  } else {
+    navbar.classList.remove(
+      "bg-black/80",
+      "border-white/10",
+      "shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
+    );
+  }
+});
+</script>
 </Layout>
