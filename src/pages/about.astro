@@ -1,0 +1,217 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Sobre mí | Regina Servín"
+  description="Conoce más sobre Regina Servín, estudiante de ingeniería en desarrollo de software."
+>
+  <main class="min-h-screen overflow-x-hidden bg-[#040404] text-white">
+
+    <!-- HERO -->
+    <section class="relative mx-auto max-w-7xl px-6 pt-10 pb-20">
+      <div class="absolute right-0 top-10 h-[420px] w-[420px] rounded-full bg-[#86B84C]/10 blur-3xl"></div>
+
+      <div class="grid gap-14 lg:grid-cols-2 lg:items-center">
+
+        <!-- LEFT -->
+        <div class="relative z-10">
+
+          <span class="inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-[#86B84C]">
+            Sobre mí
+          </span>
+
+          <h1 class="mt-6 text-5xl font-black leading-tight md:text-6xl">
+            Aprendiendo<br />
+            Liderando<br />
+            <span class="text-[#86B84C]">Creando</span>
+          </h1>
+
+          <p class="mt-6 max-w-xl text-lg leading-8 text-zinc-400">
+            Soy estudiante de Ingeniería en Desarrollo de Software con experiencia
+            real liderando equipos, creando sistemas web y mejorando procesos.
+            Me enfoco en resolver problemas y seguir creciendo profesionalmente.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+
+            <a
+              href="/projects"
+              class="rounded-2xl bg-[#86B84C] px-6 py-3 font-semibold text-black transition hover:scale-105"
+            >
+              Ver proyectos →
+            </a>
+
+            <a
+              href="/#contact"
+              class="rounded-2xl border border-white/10 px-6 py-3 font-semibold transition hover:border-[#86B84C]"
+            >
+              Contacto
+            </a>
+
+          </div>
+        </div>
+
+        <!-- RIGHT CARD -->
+        <div class="relative z-10">
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+
+            <h3 class="text-xl font-bold">
+              Perfil rápido
+            </h3>
+
+            <div class="mt-6 space-y-5 text-zinc-300">
+
+              <div class="flex items-center justify-between border-b border-white/5 pb-3">
+                <span>Universidad</span>
+                <span class="font-semibold text-white">Tecmilenio</span>
+              </div>
+
+              <div class="flex items-center justify-between border-b border-white/5 pb-3">
+                <span>Ubicación</span>
+                <span class="font-semibold text-white">México</span>
+              </div>
+
+              <div class="flex items-center justify-between border-b border-white/5 pb-3">
+                <span>Idiomas</span>
+                <span class="font-semibold text-white">Español / Inglés</span>
+              </div>
+
+              <div class="flex items-center justify-between border-b border-white/5 pb-3">
+                <span>Disponibilidad</span>
+                <span class="font-semibold text-[#86B84C]">
+                  Disponible para trabajar
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRAYECTORIA -->
+    <section class="mx-auto max-w-7xl px-6 py-16">
+
+      <h2 class="text-4xl font-black">
+        Mi trayectoria
+      </h2>
+
+      <div class="mt-12 grid gap-8 md:grid-cols-2">
+
+        <div class="rounded-3xl border border-white/10 bg-white/[0.02] p-7">
+          <span class="font-semibold text-[#86B84C]">01</span>
+
+          <h3 class="mt-3 text-2xl font-bold">
+            Liderazgo en robótica
+          </h3>
+
+          <p class="mt-3 leading-7 text-zinc-400">
+            Formación y liderazgo dentro de equipos FIRST Robotics,
+            coordinando personas, procesos y crecimiento técnico.
+          </p>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white/[0.02] p-7">
+          <span class="font-semibold text-[#86B84C]">02</span>
+
+          <h3 class="mt-3 text-2xl font-bold">
+            Desarrollo web
+          </h3>
+
+          <p class="mt-3 leading-7 text-zinc-400">
+            Creación de sitios modernos, funcionales y orientados a objetivos reales.
+          </p>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white/[0.02] p-7">
+          <span class="font-semibold text-[#86B84C]">03</span>
+
+          <h3 class="mt-3 text-2xl font-bold">
+            Pensamiento sistémico
+          </h3>
+
+          <p class="mt-3 leading-7 text-zinc-400">
+            Organización de recursos, documentación y procesos internos eficientes.
+          </p>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white/[0.02] p-7">
+          <span class="font-semibold text-[#86B84C]">04</span>
+
+          <h3 class="mt-3 text-2xl font-bold">
+            Crecimiento constante
+          </h3>
+
+          <p class="mt-3 leading-7 text-zinc-400">
+            Aprendo rápido, mejoro continuamente y busco nuevos retos.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section class="mx-auto max-w-7xl px-6 py-16">
+
+      <h2 class="text-4xl font-black">
+        Habilidades y fortalezas
+      </h2>
+
+      <div class="mt-10 flex flex-wrap gap-4">
+
+        {[
+          "Java",
+          "Python",
+          "Astro",
+          "HTML/CSS",
+          "Git",
+          "Liderazgo",
+          "Resolución de problemas",
+          "Documentación",
+          "Trabajo en equipo",
+          "Diseño UI",
+          "Comunicación efectiva",
+          "Aprendizaje rápido",
+          "Pensamiento sistémico",
+          "Gestión de proyectos",
+          "Adaptabilidad",
+        ].map((skill) => (
+          <span class="rounded-full border border-white/10 bg-white/[0.03] px-5 py-3 text-sm text-zinc-300 transition hover:border-[#86B84C] hover:text-white">
+            {skill}
+          </span>
+        ))}
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mx-auto max-w-7xl px-6 py-20">
+
+      <div class="rounded-[32px] border border-white/10 bg-white/[0.02] p-10 md:flex md:items-center md:justify-between">
+
+        <div>
+          <h2 class="text-4xl font-black">
+            Construyamos algo grande
+          </h2>
+
+          <p class="mt-4 text-zinc-400">
+            Disponible para prácticas, freelance y oportunidades junior.
+          </p>
+        </div>
+
+        <a
+          href="/#contact"
+          class="mt-6 inline-block rounded-2xl bg-[#86B84C] px-7 py-4 font-semibold text-black transition hover:scale-105 md:mt-0"
+        >
+          Hablemos →
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+</Layout>
