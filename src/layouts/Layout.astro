@@ -23,10 +23,10 @@ const {
       id="navbar"
       class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#040404]/75 backdrop-blur-xl transition-all duration-300"
     >
-      <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <nav class="mx-auto flex max-w-7xl items-center justify-center px-4 py-3 sm:px-6 md:justify-between md:py-4">
 
         <!-- LOGO -->
-        <a href="/" class="flex items-center gap-3">
+        <a href="/" class="hidden min-w-0 items-center gap-3 md:flex">
           <div class="rounded-xl border border-[#86B84C]/20 bg-[#86B84C]/10 px-3 py-2 text-lg font-black text-[#86B84C]">
             RS
           </div>
@@ -37,32 +37,32 @@ const {
         </a>
 
         <!-- MENU -->
-        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+        <div class="flex w-full items-center justify-center gap-2 overflow-x-auto whitespace-nowrap text-sm font-medium text-zinc-400 md:w-auto md:justify-start md:gap-8 md:overflow-visible">
 
           <a
             href="/"
-            class="relative transition hover:text-white"
+            class="rounded-full border border-white/10 px-3 py-2 transition hover:text-white md:border-0 md:px-0 md:py-0"
           >
             Inicio
           </a>
 
           <a
             href="/projects"
-            class="relative transition hover:text-white"
+            class="rounded-full border border-white/10 px-3 py-2 transition hover:text-white md:border-0 md:px-0 md:py-0"
           >
             Proyectos
           </a>
 
           <a
             href="/about"
-            class="relative transition hover:text-white"
+            class="rounded-full border border-white/10 px-3 py-2 transition hover:text-white md:border-0 md:px-0 md:py-0"
           >
             Sobre mí
           </a>
 
           <a
             href="/#contact"
-            class="relative transition hover:text-white"
+            class="rounded-full border border-white/10 px-3 py-2 transition hover:text-white md:border-0 md:px-0 md:py-0"
           >
             Contacto
           </a>

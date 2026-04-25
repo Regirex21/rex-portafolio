@@ -9,3 +9,5 @@ export default defineConfig({
     plugins: [tailwindcss()]
   }
 });
+
+// npm run dev -- --host

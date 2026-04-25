@@ -9,9 +9,9 @@ import Layout from "../layouts/Layout.astro";
   <main class="min-h-screen overflow-x-hidden bg-[#040404] text-white">
 
     <!-- HERO -->
-    <section class="relative mx-auto max-w-7xl px-6 pt-10 pb-20">
+    <section class="relative mx-auto max-w-7xl px-4 pt-6 pb-16 sm:px-6 md:pt-10 md:pb-20">
 
-      <div class="absolute left-0 top-10 h-[360px] w-[360px] rounded-full bg-[#86B84C]/10 blur-3xl"></div>
+      <div class="absolute left-[-120px] top-10 h-[300px] w-[300px] rounded-full bg-[#86B84C]/10 blur-3xl sm:left-0 sm:h-[360px] sm:w-[360px]"></div>
 
       <div class="relative z-10 max-w-4xl">
 
@@ -19,12 +19,12 @@ import Layout from "../layouts/Layout.astro";
           Contacto
         </span>
 
-        <h1 class="mt-6 text-5xl font-black leading-tight md:text-6xl">
+        <h1 class="mt-6 text-4xl font-black leading-tight sm:text-5xl md:text-6xl">
           Hablemos.<br />
           <span class="text-[#86B84C]">Estoy disponible.</span>
         </h1>
 
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
+        <p class="mt-6 max-w-2xl text-base leading-7 text-zinc-400 sm:text-lg sm:leading-8">
           Disponible para prácticas, medio tiempo, freelance y oportunidades junior.
           Si tienes una vacante, proyecto o colaboración, estaré encantada de conversar.
         </p>
@@ -34,14 +34,14 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <!-- CONTACT GRID -->
-    <section class="mx-auto max-w-7xl px-6 pb-20">
+    <section class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 md:pb-20">
 
       <div class="grid gap-8 lg:grid-cols-2">
 
         <!-- LEFT -->
-        <div class="rounded-[32px] border border-white/10 bg-white/[0.03] p-8">
+        <div class="rounded-[28px] border border-white/10 bg-white/[0.03] p-5 sm:p-8 md:rounded-[32px]">
 
-          <h2 class="text-3xl font-black">
+          <h2 class="text-2xl font-black sm:text-3xl">
             Información de contacto
           </h2>
 
@@ -62,7 +62,7 @@ import Layout from "../layouts/Layout.astro";
 
                 <button
                   id="copyEmail"
-                  class="rounded-xl bg-[#86B84C] px-5 py-2 font-semibold text-black transition hover:scale-105"
+                  class="w-full rounded-xl bg-[#86B84C] px-5 py-2 font-semibold text-black transition hover:scale-105 md:w-auto"
                 >
                   Copiar
                 </button>
@@ -78,7 +78,7 @@ import Layout from "../layouts/Layout.astro";
               class="block rounded-2xl border border-white/10 bg-[#0d0d0d] p-5 transition hover:border-[#86B84C]"
             >
               <p class="text-sm text-zinc-500">LinkedIn</p>
-              <p class="mt-2 text-lg font-medium text-white">
+              <p class="mt-2 break-all text-base font-medium text-white sm:text-lg">
                 linkedin.com/in/regina-servín
               </p>
             </a>
@@ -90,7 +90,7 @@ import Layout from "../layouts/Layout.astro";
               class="block rounded-2xl border border-white/10 bg-[#0d0d0d] p-5 transition hover:border-[#86B84C]"
             >
               <p class="text-sm text-zinc-500">GitHub</p>
-              <p class="mt-2 text-lg font-medium text-white">
+              <p class="mt-2 break-all text-base font-medium text-white sm:text-lg">
                 github.com/Regirex21
               </p>
             </a>
@@ -100,9 +100,9 @@ import Layout from "../layouts/Layout.astro";
         </div>
 
         <!-- RIGHT -->
-        <div class="rounded-[32px] border border-white/10 bg-white/[0.03] p-8">
+        <div class="rounded-[28px] border border-white/10 bg-white/[0.03] p-5 sm:p-8 md:rounded-[32px]">
 
-          <h2 class="text-3xl font-black">
+          <h2 class="text-2xl font-black sm:text-3xl">
             ¿Por qué contactarme?
           </h2>
 

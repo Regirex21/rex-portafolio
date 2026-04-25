@@ -9,9 +9,9 @@ import Layout from "../layouts/Layout.astro";
   <main class="min-h-screen overflow-x-hidden bg-[#040404] text-white">
 
     <!-- HERO -->
-    <section class="relative mx-auto max-w-7xl px-6 pt-10 pb-20">
+    <section class="relative mx-auto max-w-7xl px-4 pt-6 pb-16 sm:px-6 md:pt-10 md:pb-20">
 
-      <div class="absolute right-0 top-10 h-[420px] w-[420px] rounded-full bg-[#86B84C]/10 blur-3xl"></div>
+      <div class="absolute right-[-120px] top-10 h-[320px] w-[320px] rounded-full bg-[#86B84C]/10 blur-3xl sm:right-0 sm:h-[420px] sm:w-[420px]"></div>
 
       <div class="relative z-10 max-w-4xl">
 
@@ -19,12 +19,12 @@ import Layout from "../layouts/Layout.astro";
           Proyectos
         </span>
 
-        <h1 class="mt-6 text-5xl font-black leading-tight md:text-6xl">
+        <h1 class="mt-6 text-4xl font-black leading-tight sm:text-5xl md:text-6xl">
           Proyectos reales.<br />
           <span class="text-[#86B84C]">Soluciones útiles.</span>
         </h1>
 
-        <p class="mt-6 max-w-3xl text-lg leading-8 text-zinc-400">
+        <p class="mt-6 max-w-3xl text-base leading-7 text-zinc-400 sm:text-lg sm:leading-8">
           Sitios web, plataformas internas y documentación creada con enfoque
           práctico. Me interesa construir herramientas funcionales que mejoren
           procesos y generen valor real.
@@ -35,9 +35,9 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <!-- FEATURED PROJECT -->
-    <section class="mx-auto max-w-7xl px-6 pb-20">
+    <section class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 md:pb-20">
 
-      <div class="rounded-[36px] border border-white/10 bg-white/[0.03] p-6 lg:p-10">
+      <div class="rounded-[28px] border border-white/10 bg-white/[0.03] p-4 sm:p-6 md:rounded-[36px] lg:p-10">
 
         <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
 
@@ -46,7 +46,7 @@ import Layout from "../layouts/Layout.astro";
             <img
               src="/components/docs.png"
               alt="FIRSTHub Docs"
-              class="h-full w-full rounded-3xl border border-white/10 object-cover"
+              class="aspect-video h-auto w-full rounded-2xl border border-white/10 object-cover md:rounded-3xl"
             />
           </div>
 
@@ -57,7 +57,7 @@ import Layout from "../layouts/Layout.astro";
               Proyecto destacado
             </span>
 
-            <h2 class="mt-4 text-4xl font-black">
+            <h2 class="mt-4 text-3xl font-black sm:text-4xl">
               FIRSTHub Docs
             </h2>
 
@@ -86,12 +86,12 @@ import Layout from "../layouts/Layout.astro";
 
             </div>
 
-            <div class="mt-8 flex flex-wrap gap-4">
+            <div class="mt-8 flex flex-wrap gap-3 sm:gap-4">
 
               <a
                 href="https://firsthub-docs.vercel.app"
                 target="_blank"
-                class="rounded-2xl bg-[#86B84C] px-6 py-3 font-semibold text-black transition hover:scale-105"
+                class="w-full rounded-2xl bg-[#86B84C] px-6 py-3 text-center font-semibold text-black transition hover:scale-105 sm:w-auto"
               >
                 Ver proyecto →
               </a>
@@ -99,7 +99,7 @@ import Layout from "../layouts/Layout.astro";
               <a
                 href="https://github.com/Regirex21"
                 target="_blank"
-                class="rounded-2xl border border-white/10 px-6 py-3 font-semibold transition hover:border-[#86B84C]"
+                class="w-full rounded-2xl border border-white/10 px-6 py-3 text-center font-semibold transition hover:border-[#86B84C] sm:w-auto"
               >
                 GitHub
               </a>
@@ -115,20 +115,20 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <!-- PROJECT GRID -->
-    <section class="mx-auto max-w-7xl px-6 pb-20">
+    <section class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 md:pb-20">
 
       <div class="grid gap-8 lg:grid-cols-2">
 
         <!-- ARIA -->
-        <div class="rounded-[32px] border border-white/10 bg-white/[0.03] p-6">
+        <div class="rounded-[28px] border border-white/10 bg-white/[0.03] p-4 sm:p-6 md:rounded-[32px]">
 
           <img
             src="/components/aria.png"
             alt="ARIA Website"
-            class="h-56 w-full rounded-2xl border border-white/10 object-cover"
+            class="h-44 w-full rounded-2xl border border-white/10 object-cover sm:h-56"
           />
 
-          <h3 class="mt-6 text-3xl font-black">
+          <h3 class="mt-6 text-2xl font-black sm:text-3xl">
             ARIA Website
           </h3>
 
@@ -153,15 +153,15 @@ import Layout from "../layouts/Layout.astro";
         </div>
 
         <!-- FIRSTHUB PLATFORM -->
-        <div class="rounded-[32px] border border-white/10 bg-white/[0.03] p-6">
+        <div class="rounded-[28px] border border-white/10 bg-white/[0.03] p-4 sm:p-6 md:rounded-[32px]">
 
           <img
             src="/components/firsthub.png"
             alt="FIRSTHub Platform"
-            class="h-56 w-full rounded-2xl border border-white/10 object-cover"
+            class="h-44 w-full rounded-2xl border border-white/10 object-cover sm:h-56"
           />
 
-          <h3 class="mt-6 text-3xl font-black">
+          <h3 class="mt-6 text-2xl font-black sm:text-3xl">
             FIRSTHub Platform
           </h3>
 
@@ -190,11 +190,11 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <!-- EXPERIENCE -->
-    <section class="mx-auto max-w-7xl px-6 pb-20">
+    <section class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 md:pb-20">
 
-      <div class="rounded-[32px] border border-white/10 bg-white/[0.03] p-8">
+      <div class="rounded-[28px] border border-white/10 bg-white/[0.03] p-5 sm:p-8 md:rounded-[32px]">
 
-        <h2 class="text-4xl font-black">
+        <h2 class="text-3xl font-black sm:text-4xl">
           Experiencia aplicada
         </h2>
 
@@ -229,9 +229,9 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <!-- LEARNINGS -->
-    <section class="mx-auto max-w-7xl px-6 pb-20">
+    <section class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 md:pb-20">
 
-      <h2 class="text-4xl font-black">
+      <h2 class="text-3xl font-black sm:text-4xl">
         Lo que he aprendido construyendo
       </h2>
 
@@ -258,12 +258,12 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <!-- CTA -->
-    <section class="mx-auto max-w-7xl px-6 pb-24">
+    <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 md:pb-24">
 
-      <div class="rounded-[32px] border border-white/10 bg-white/[0.03] p-10 md:flex md:items-center md:justify-between">
+      <div class="rounded-[28px] border border-white/10 bg-white/[0.03] p-5 sm:p-8 md:flex md:items-center md:justify-between md:rounded-[32px] md:p-10">
 
         <div>
-          <h2 class="text-4xl font-black">
+          <h2 class="text-3xl font-black sm:text-4xl">
             ¿Trabajamos juntos?
           </h2>
 
@@ -274,7 +274,7 @@ import Layout from "../layouts/Layout.astro";
 
         <a
           href="/contact"
-          class="mt-6 inline-block rounded-2xl bg-[#86B84C] px-7 py-4 font-semibold text-black transition hover:scale-105 md:mt-0"
+          class="mt-6 inline-block w-full rounded-2xl bg-[#86B84C] px-7 py-4 text-center font-semibold text-black transition hover:scale-105 sm:w-auto md:mt-0"
         >
           Contactar →
         </a>

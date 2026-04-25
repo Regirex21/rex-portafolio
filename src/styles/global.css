@@ -1,4 +1,17 @@
 @import "tailwindcss";
+
+html {
+  scroll-padding-top: 8rem;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -8,4 +21,10 @@
 .reveal.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (max-width: 767px) {
+  .reveal {
+    transform: translateY(18px);
+  }
 }

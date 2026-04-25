@@ -13,10 +13,10 @@ import Layout from "../layouts/Layout.astro";
   id="navbar"
   class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#040404]/65 backdrop-blur-xl transition-all duration-300"
 >
-      <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <nav class="mx-auto flex max-w-7xl items-center justify-center px-4 py-3 sm:px-6 md:justify-between md:py-4">
 
         <!-- BRAND -->
-        <a href="#" class="flex items-center gap-3">
+        <a href="#" class="hidden items-center gap-3 md:flex">
           <div class="rounded-xl border border-[#86B84C]/20 bg-[#86B84C]/10 px-3 py-2 text-xl font-black text-[#86B84C]">
             RS
           </div>
@@ -27,11 +27,11 @@ import Layout from "../layouts/Layout.astro";
         </a>
 
         <!-- MENU -->
-      <div class="hidden md:flex items-center gap-10 text-sm font-medium text-zinc-400">
-          <a href="/" class="hover:text-white transition">Inicio</a>
-          <a href="/projects" class="hover:text-white transition">Proyectos</a>
-          <a href="/about" class="hover:text-white transition">Sobre mí</a>
-          <a href="/contact" class="hover:text-white transition">Contacto</a>
+      <div class="flex w-full items-center justify-center gap-2 overflow-x-auto whitespace-nowrap text-sm font-medium text-zinc-400 md:w-auto md:justify-start md:gap-10 md:overflow-visible">
+          <a href="/" class="rounded-full border border-white/10 px-3 py-2 transition hover:text-white md:border-0 md:px-0 md:py-0">Inicio</a>
+          <a href="/projects" class="rounded-full border border-white/10 px-3 py-2 transition hover:text-white md:border-0 md:px-0 md:py-0">Proyectos</a>
+          <a href="/about" class="rounded-full border border-white/10 px-3 py-2 transition hover:text-white md:border-0 md:px-0 md:py-0">Sobre mí</a>
+          <a href="/contact" class="rounded-full border border-white/10 px-3 py-2 transition hover:text-white md:border-0 md:px-0 md:py-0">Contacto</a>
       </div>
         <!-- ACTIONS -->
         <div class="hidden md:flex items-center gap-3">
@@ -62,15 +62,15 @@ import Layout from "../layouts/Layout.astro";
     </header>
 
     <!-- HERO -->
-    <section class="relative mx-auto max-w-7xl px-6 pt-20 pb-28 reveal">
+    <section class="relative mx-auto max-w-7xl px-4 pt-8 pb-20 sm:px-6 md:pb-28 md:pt-16 reveal">
 
-      <div class="grid items-center gap-20 lg:grid-cols-2">
+      <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
 
         <!-- LEFT -->
         <div>
 
           <!-- AVAILABLE BADGE -->
-          <div class="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-[#101010] px-5 py-3 reveal">
+          <div class="mb-6 inline-flex max-w-full items-center gap-3 rounded-full border border-white/10 bg-[#101010] px-4 py-3 reveal sm:px-5 md:mb-8">
             <span class="h-3 w-3 rounded-full bg-[#86B84C] shadow-[0_0_15px_#86B84C]"></span>
 
             <span class="text-sm font-medium text-zinc-200">
@@ -79,29 +79,29 @@ import Layout from "../layouts/Layout.astro";
           </div>
 
           <!-- NAME -->
-          <h1 class="text-5xl font-black leading-[1] tracking-[-0.03em] md:text-6xl xl:text-[4.8rem] whitespace-nowrap reveal">
+          <h1 class="text-4xl font-black leading-[1.02] tracking-tight sm:text-5xl md:text-6xl xl:text-[4.8rem] reveal">
             Regina <span class="text-[#86B84C]">Servín</span>
           </h1>
 
           <!-- ROLE -->
-          <p class="mt-8 max-w-3xl text-2xl font-medium leading-snug text-zinc-200 reveal">
+          <p class="mt-6 max-w-3xl text-xl font-medium leading-snug text-zinc-200 sm:text-2xl md:mt-8 reveal">
             Estudiante de Ingeniería en Desarrollo de Software <br />
             | Junior Developer
           </p>
 
           <!-- DESCRIPTION -->
-          <p class="mt-8 max-w-2xl text-lg leading-relaxed text-zinc-400 reveal">
+          <p class="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg md:mt-8 reveal">
             Construyo soluciones web funcionales, sistemas organizados y
             documentación técnica. Me apasiona resolver problemas, aprender
             rápido y trabajar en equipo.
           </p>
 
           <!-- BUTTONS -->
-          <div class="mt-10 flex flex-wrap gap-4 items-center reveal">
+          <div class="mt-8 flex flex-wrap gap-3 items-center reveal sm:gap-4 md:mt-10">
 
             <a
               href="/projects"
-              class="rounded-2xl bg-[#86B84C] px-8 py-4 text-lg font-semibold text-black shadow-[0_0_24px_rgba(134,184,76,0.18)] transition hover:scale-[1.02] hover:bg-[#93c957]"
+              class="w-full rounded-2xl bg-[#86B84C] px-6 py-4 text-center text-base font-semibold text-black shadow-[0_0_24px_rgba(134,184,76,0.18)] transition hover:scale-[1.02] hover:bg-[#93c957] sm:w-auto sm:px-8 sm:text-lg"
             >
               Ver proyectos →
             </a>
@@ -135,8 +135,8 @@ import Layout from "../layouts/Layout.astro";
         </div>
 
           <!-- EMAIL BAR -->
-          <div class="mt-8 flex max-w-xl items-center justify-between rounded-2xl border border-white/10 bg-[#101010] px-5 py-4">
-            <span class="text-zinc-300">r.servin19@hotmail.com</span>
+          <div class="mt-8 flex max-w-xl flex-col gap-3 rounded-2xl border border-white/10 bg-[#101010] px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-5">
+            <span class="break-all text-zinc-300">r.servin19@hotmail.com</span>
 
             <button
               id="copyEmail2"
@@ -190,10 +190,10 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="mx-auto max-w-7xl px-6 pb-28 reveal">
+    <section id="projects" class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 md:pb-28 reveal">
 
-      <div class="mb-10 flex items-center justify-between reveal">
-        <h2 class="text-5xl font-black tracking-tight">
+      <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between md:mb-10 reveal">
+        <h2 class="text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">
           Proyectos destacados
         </h2>
 
@@ -206,18 +206,18 @@ import Layout from "../layouts/Layout.astro";
         </a>
       </div>
 
-      <div class="grid gap-6 lg:grid-cols-3">
+      <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
 
         <!-- ARIA -->
         <a
           href="https://aria-steamex.vercel.app"
           target="_blank"
-          class="group rounded-3xl border border-white/10 bg-[#0b0b0b] p-4 transition hover:-translate-y-1 hover:border-[#86B84C] reveal"
+            class="group rounded-3xl border border-white/10 bg-[#0b0b0b] p-4 transition hover:-translate-y-1 hover:border-[#86B84C] reveal"
         >
           <img
             src="components/aria.png"
             alt="ARIA Website"
-            class="h-48 w-full rounded-2xl object-cover"
+            class="h-44 w-full rounded-2xl object-cover sm:h-48"
           />
 
           <h3 class="mt-5 text-2xl font-bold transition group-hover:text-[#86B84C] reveal">
@@ -238,7 +238,7 @@ import Layout from "../layouts/Layout.astro";
           <img
             src="components/firsthub.png"
             alt="FIRSTHub"
-            class="h-48 w-full rounded-2xl object-cover"
+            class="h-44 w-full rounded-2xl object-cover sm:h-48"
           />
 
           <h3 class="mt-5 text-2xl font-bold transition group-hover:text-[#86B84C] reveal">
@@ -259,7 +259,7 @@ import Layout from "../layouts/Layout.astro";
           <img
             src="components/docs.png"
             alt="FIRSTHub Docs"
-            class="h-48 w-full rounded-2xl object-cover"
+            class="h-44 w-full rounded-2xl object-cover sm:h-48"
           />
 
           <h3 class="mt-5 text-2xl font-bold transition group-hover:text-[#86B84C] reveal">
@@ -275,15 +275,15 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="mx-auto max-w-7xl px-6 pb-28">
+    <section id="about" class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 md:pb-28">
 
-  <div class="rounded-[32px] border border-white/10 bg-[#0b0b0b] p-10 reveal">
-    <h2 class="text-5xl font-black tracking-tight">
+  <div class="rounded-[28px] border border-white/10 bg-[#0b0b0b] p-5 sm:p-8 md:rounded-[32px] md:p-10 reveal">
+    <h2 class="text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">
       ¿Por qué trabajar conmigo?
     </h2>
 
     <!-- BENEFITS -->
-    <div class="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+    <div class="mt-10 grid gap-8 sm:grid-cols-2 xl:grid-cols-4 md:mt-12">
 
       <div>
         <img src="icons/alt-plus-lens-svgrepo-com.svg" class="h-10 w-10 mb-4" />
@@ -336,7 +336,7 @@ import Layout from "../layouts/Layout.astro";
     </div>
 
     <!-- INFO BAR -->
-    <div class="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4 reveal">
+    <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4 reveal">
 
   <!-- UNIVERSIDAD -->
   <div class="rounded-2xl border border-white/10 bg-[#111] p-5">
@@ -392,14 +392,14 @@ import Layout from "../layouts/Layout.astro";
 
 </section>
     <!-- CONTACT -->
-    <section id="contact" class="mx-auto max-w-7xl px-6 pb-24">
-  <div class="rounded-[32px] border border-white/10 bg-[#0b0b0b] p-10">
+    <section id="contact" class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 md:pb-24">
+  <div class="rounded-[28px] border border-white/10 bg-[#0b0b0b] p-5 sm:p-8 md:rounded-[32px] md:p-10">
 
     <div class="grid items-center gap-8 lg:grid-cols-[1fr_auto] reveal">
 
       <!-- TEXT -->
       <div>
-        <h2 class="text-5xl font-black tracking-tight">
+        <h2 class="text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">
           ¿Tienes un proyecto en mente?
         </h2>
 
@@ -412,7 +412,7 @@ import Layout from "../layouts/Layout.astro";
       <div>
         <a
           href="mailto:r.servin19@hotmail.com"
-          class="inline-flex rounded-2xl bg-[#86B84C] px-8 py-4 text-lg font-semibold text-black transition hover:opacity-90"
+          class="inline-flex w-full justify-center rounded-2xl bg-[#86B84C] px-8 py-4 text-lg font-semibold text-black transition hover:opacity-90 sm:w-auto"
         >
           Hablemos →
         </a>
@@ -425,7 +425,7 @@ import Layout from "../layouts/Layout.astro";
 
     <!-- FOOTER -->
     <footer class="border-t border-white/10 py-8">
-  <div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 text-sm text-zinc-500 md:flex-row md:items-center md:justify-between">
+  <div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 text-sm text-zinc-500 sm:px-6 md:flex-row md:items-center md:justify-between">
 
     <div>
       <p class="font-medium text-zinc-300">Regina Servín</p>
