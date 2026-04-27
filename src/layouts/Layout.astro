@@ -3,12 +3,36 @@ import "../styles/global.css";
 
 const {
   title = "Regina Servín | Portafolio",
-  description = "Portafolio de Regina Servín, estudiante de ingeniería en desarrollo de software."
+  description = "Portafolio de Regina Servín, estudiante de ingeniería en desarrollo de software.",
+  lang = "es"
 } = Astro.props;
+
+const isEnglish = lang === "en";
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+const languagePath = isEnglish
+  ? currentPath.replace(/^\/en/, "") || "/"
+  : currentPath === "/"
+    ? "/en/"
+    : `/en${currentPath}`;
+
+const nav = {
+  home: isEnglish ? "Home" : "Inicio",
+  projects: isEnglish ? "Projects" : "Proyectos",
+  about: isEnglish ? "About me" : "Sobre mí",
+  contact: isEnglish ? "Contact" : "Contacto",
+};
+
+const paths = {
+  home: isEnglish ? "/en/" : "/",
+  projects: isEnglish ? "/en/projects" : "/projects",
+  about: isEnglish ? "/en/about" : "/about",
+  contact: isEnglish ? "/en/contact" : "/contact",
+  language: languagePath,
+};
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -26,7 +50,7 @@ const {
       <nav class="mx-auto flex max-w-7xl items-center justify-center px-4 py-3 sm:px-6 md:justify-between md:py-4">
 
         <!-- LOGO -->
-        <a href="/" class="hidden min-w-0 items-center gap-3 md:flex">
+        <a href={paths.home} class="hidden min-w-0 items-center gap-3 md:flex">
           <div class="rounded-xl border border-[#86B84C]/20 bg-[#86B84C]/10 px-3 py-2 text-lg font-black text-[#86B84C]">
             RS
           </div>
@@ -40,37 +64,45 @@ const {
         <div class="flex w-full items-center justify-center gap-2 overflow-x-auto whitespace-nowrap text-sm font-medium text-zinc-400 md:w-auto md:justify-start md:gap-8 md:overflow-visible">
 
           <a
-            href="/"
+            href={paths.home}
             class="rounded-full border border-white/10 px-3 py-2 transition hover:text-white md:border-0 md:px-0 md:py-0"
           >
-            Inicio
+            {nav.home}
           </a>
 
           <a
-            href="/projects"
+            href={paths.projects}
             class="rounded-full border border-white/10 px-3 py-2 transition hover:text-white md:border-0 md:px-0 md:py-0"
           >
-            Proyectos
+            {nav.projects}
           </a>
 
           <a
-            href="/about"
+            href={paths.about}
             class="rounded-full border border-white/10 px-3 py-2 transition hover:text-white md:border-0 md:px-0 md:py-0"
           >
-            Sobre mí
+            {nav.about}
           </a>
 
           <a
-            href="/#contact"
+            href={paths.contact}
             class="rounded-full border border-white/10 px-3 py-2 transition hover:text-white md:border-0 md:px-0 md:py-0"
           >
-            Contacto
+            {nav.contact}
           </a>
 
         </div>
 
         <!-- RIGHT ACTIONS -->
         <div class="hidden md:flex items-center gap-3">
+
+          <a
+            href={paths.language}
+            aria-label={isEnglish ? "Cambiar a español" : "Switch to English"}
+            class="rounded-xl border border-white/10 px-4 py-2 text-sm text-zinc-300 transition hover:border-[#86B84C] hover:text-white"
+          >
+            {isEnglish ? "EN | ES" : "ES | EN"}
+          </a>
 
           <a
             href="https://github.com/Regirex21"

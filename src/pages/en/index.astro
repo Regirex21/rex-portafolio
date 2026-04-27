@@ -1,0 +1,621 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  lang="en"
+  title="Regina Servín | Portfolio"
+  description="Portfolio of Regina Servín, software development engineering student and junior developer."
+>
+  <main class="min-h-screen overflow-x-hidden bg-[#040404] text-white relative pt-1">
+    <!-- BACKGROUND GLOWS -->
+    <div class="pointer-events-none absolute top-24 right-10 h-[560px] w-[560px] rounded-full bg-[#86B84C]/10 blur-[120px]"></div>
+    <div class="pointer-events-none absolute top-[820px] left-[-120px] h-[320px] w-[320px] rounded-full bg-[#86B84C]/4 blur-[100px]"></div>
+
+    <!-- NAVBAR -->
+    <header
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#040404]/65 backdrop-blur-xl transition-all duration-300"
+    >
+      <nav class="mx-auto flex max-w-7xl items-center justify-center px-4 py-3 sm:px-6 md:justify-between md:py-4">
+
+        <!-- BRAND -->
+        <a href="/en/" class="hidden items-center gap-3 md:flex">
+          <div class="rounded-xl border border-[#86B84C]/20 bg-[#86B84C]/10 px-3 py-2 text-xl font-black text-[#86B84C]">
+            RS
+          </div>
+
+          <span class="hidden text-lg font-semibold text-zinc-200 md:block">
+            Regina Servín
+          </span>
+        </a>
+
+        <!-- MENU -->
+        <div class="flex w-full items-center justify-center gap-2 overflow-x-auto whitespace-nowrap text-sm font-medium text-zinc-400 md:w-auto md:justify-start md:gap-10 md:overflow-visible">
+          <a href="/en/" class="rounded-full border border-white/10 px-3 py-2 transition hover:text-white md:border-0 md:px-0 md:py-0">Home</a>
+          <a href="/en/projects" class="rounded-full border border-white/10 px-3 py-2 transition hover:text-white md:border-0 md:px-0 md:py-0">Projects</a>
+          <a href="/en/about" class="rounded-full border border-white/10 px-3 py-2 transition hover:text-white md:border-0 md:px-0 md:py-0">About me</a>
+          <a href="/en/contact" class="rounded-full border border-white/10 px-3 py-2 transition hover:text-white md:border-0 md:px-0 md:py-0">Contact</a>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="hidden md:flex items-center gap-3">
+
+          <a
+            href="/"
+            aria-label="Cambiar a español"
+            class="rounded-xl border border-white/10 px-4 py-2 text-sm text-zinc-300 transition hover:border-[#86B84C] hover:text-white"
+          >
+            EN <span class="px-1 text-zinc-600">|</span> ES
+          </a>
+
+          <a
+            href="https://github.com/Regirex21"
+            target="_blank"
+            class="rounded-xl border border-white/10 px-4 py-2 text-sm text-zinc-300 transition hover:border-[#86B84C]"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/regina-servín/"
+            target="_blank"
+            class="rounded-xl border border-white/10 px-4 py-2 text-sm text-zinc-300 transition hover:border-[#86B84C]"
+          >
+            LinkedIn
+          </a>
+
+        </div>
+
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="relative mx-auto max-w-7xl px-4 pt-8 pb-20 sm:px-6 md:pb-28 md:pt-16 reveal">
+
+      <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+
+        <!-- LEFT -->
+        <div>
+
+          <!-- AVAILABLE BADGE -->
+          <div class="mb-6 inline-flex max-w-full items-center gap-3 rounded-full border border-white/10 bg-[#101010] px-4 py-3 reveal sm:px-5 md:mb-8">
+            <span class="h-3 w-3 rounded-full bg-[#86B84C] shadow-[0_0_15px_#86B84C]"></span>
+
+            <span class="text-sm font-medium text-zinc-200">
+              Available for work
+            </span>
+          </div>
+
+          <!-- NAME -->
+          <h1 class="text-4xl font-black leading-[1.02] tracking-tight sm:text-5xl md:text-6xl xl:text-[4.8rem] reveal">
+            Regina <span class="text-[#86B84C]">Servín</span>
+          </h1>
+
+          <!-- ROLE -->
+          <p class="mt-6 max-w-3xl text-xl font-medium leading-snug text-zinc-200 sm:text-2xl md:mt-8 reveal">
+            Software Development Engineering Student <br />
+            | Junior Developer
+          </p>
+
+          <!-- DESCRIPTION -->
+          <p class="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg md:mt-8 reveal">
+            I build functional web solutions, organized systems, and technical
+            documentation. I enjoy solving problems, learning quickly, and
+            working with teams.
+          </p>
+
+          <!-- BUTTONS -->
+          <div class="mt-8 flex flex-wrap gap-3 items-center reveal sm:gap-4 md:mt-10">
+
+            <a
+              href="/en/projects"
+              class="w-full rounded-2xl bg-[#86B84C] px-6 py-4 text-center text-base font-semibold text-black shadow-[0_0_24px_rgba(134,184,76,0.18)] transition hover:scale-[1.02] hover:bg-[#93c957] sm:w-auto sm:px-8 sm:text-lg"
+            >
+              View projects →
+            </a>
+
+            <a
+              href="https://drive.google.com/file/d/1-cfIBrOBDZOU68XzitoP7hClY3zenee8/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full rounded-2xl border border-white/10 px-6 py-4 text-center text-base font-semibold text-white transition hover:border-[#86B84C] hover:text-[#86B84C] sm:w-auto sm:px-8 sm:text-lg"
+            >
+              View resume
+            </a>
+
+            <!-- LINKEDIN -->
+            <a
+              href="https://www.linkedin.com/in/regina-servín/"
+              target="_blank"
+              class="flex h-[58px] w-[58px] items-center justify-center rounded-2xl border border-white/10 bg-[#101010] transition hover:border-[#86B84C]"
+            >
+              <img
+                src="/icons/icons8-linkedin (1).svg"
+                alt="LinkedIn"
+                class="h-9 w-9"
+              />
+            </a>
+
+            <!-- GITHUB -->
+            <a
+              href="https://github.com/Regirex21"
+              target="_blank"
+              class="flex h-[58px] w-[58px] items-center justify-center rounded-2xl border border-white/10 bg-[#101010] transition hover:border-[#86B84C]"
+            >
+              <img
+                src="/icons/github-142-svgrepo-com.svg"
+                alt="GitHub"
+                class="h-8 w-8"
+              />
+            </a>
+
+          </div>
+
+          <!-- EMAIL BAR -->
+          <div class="mt-8 flex max-w-xl flex-col gap-3 rounded-2xl border border-white/10 bg-[#101010] px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-5">
+            <span class="break-all text-zinc-300">r.servin19@hotmail.com</span>
+
+            <button
+              id="copyEmail2"
+              class="font-medium text-[#86B84C] transition hover:opacity-80"
+            >
+              Copy
+            </button>
+          </div>
+
+        </div>
+
+        <!-- RIGHT VISUAL -->
+        <div class="hidden lg:flex justify-center reveal">
+
+          <div
+            id="heroCardWrap"
+            class="relative w-full max-w-xl perspective-[1400px]"
+          >
+
+            <!-- glow -->
+            <div
+              class="pointer-events-none absolute inset-0 rounded-[32px] bg-[#86B84C]/8 blur-[90px]"
+            ></div>
+
+            <!-- card -->
+            <div
+              id="heroCard"
+              class="relative rounded-[32px] border border-white/10 bg-[#090909] p-8 shadow-[0_30px_90px_rgba(0,0,0,0.55)] transition-transform duration-200 reveal"
+            >
+
+              <!-- top dots -->
+              <div class="mb-8 flex gap-2">
+                <div class="h-3 w-3 rounded-full bg-[#8b2a2a]"></div>
+                <div class="h-3 w-3 rounded-full bg-[#8b6a2a]"></div>
+                <div class="h-3 w-3 rounded-full bg-[#2f8b2a]"></div>
+              </div>
+
+              <p class="mb-6 text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
+                Developer Profile
+              </p>
+
+              <pre class="overflow-hidden rounded-2xl bg-[#050505] p-6 text-[15px] leading-8 text-zinc-300">
+<code id="typingCode"></code><span class="animate-pulse text-[#86B84C]">|</span>
+              </pre>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 md:pb-28 reveal">
+
+      <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between md:mb-10 reveal">
+        <h2 class="text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">
+          Featured projects
+        </h2>
+
+        <a
+          href="https://github.com/Regirex21"
+          target="_blank"
+          class="text-[#86B84C] transition hover:opacity-80"
+        >
+          See all →
+        </a>
+      </div>
+
+      <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+
+        <!-- ARIA -->
+        <a
+          href="https://aria-steamex.vercel.app"
+          target="_blank"
+          class="group rounded-3xl border border-white/10 bg-[#0b0b0b] p-4 transition hover:-translate-y-1 hover:border-[#86B84C] reveal"
+        >
+          <img
+            src="/components/aria.png"
+            alt="ARIA Website"
+            class="h-44 w-full rounded-2xl object-cover sm:h-48"
+          />
+
+          <h3 class="mt-5 text-2xl font-bold transition group-hover:text-[#86B84C] reveal">
+            ARIA Website
+          </h3>
+
+          <p class="mt-3 text-zinc-400">
+            Modern website for branding and digital presence.
+          </p>
+        </a>
+
+        <!-- FIRSTHUB -->
+        <a
+          href="https://firsthub.vercel.app"
+          target="_blank"
+          class="group rounded-3xl border border-white/10 bg-[#0b0b0b] p-4 transition hover:-translate-y-1 hover:border-[#86B84C] reveal"
+        >
+          <img
+            src="/components/firsthub.png"
+            alt="FIRSTHub"
+            class="h-44 w-full rounded-2xl object-cover sm:h-48"
+          />
+
+          <h3 class="mt-5 text-2xl font-bold transition group-hover:text-[#86B84C] reveal">
+            FIRSTHub Platform
+          </h3>
+
+          <p class="mt-3 text-zinc-400">
+            Platform for organization and resources.
+          </p>
+        </a>
+
+        <!-- DOCS -->
+        <a
+          href="https://firsthub-docs.vercel.app"
+          target="_blank"
+          class="group rounded-3xl border border-white/10 bg-[#0b0b0b] p-4 transition hover:-translate-y-1 hover:border-[#86B84C] reveal"
+        >
+          <img
+            src="/components/docs.png"
+            alt="FIRSTHub Docs"
+            class="h-44 w-full rounded-2xl object-cover sm:h-48"
+          />
+
+          <h3 class="mt-5 text-2xl font-bold transition group-hover:text-[#86B84C] reveal">
+            FIRSTHub Docs
+          </h3>
+
+          <p class="mt-3 text-zinc-400">
+            Structured technical documentation.
+          </p>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 md:pb-28">
+
+      <div class="rounded-[28px] border border-white/10 bg-[#0b0b0b] p-5 sm:p-8 md:rounded-[32px] md:p-10 reveal">
+        <h2 class="text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">
+          Why work with me?
+        </h2>
+
+        <!-- BENEFITS -->
+        <div class="mt-10 grid gap-8 sm:grid-cols-2 xl:grid-cols-4 md:mt-12">
+
+          <div>
+            <img src="/icons/alt-plus-lens-svgrepo-com.svg" class="h-10 w-10 mb-4" alt="" />
+            <h3 class="text-xl font-semibold text-[#86B84C]">Solution-focused</h3>
+            <p class="mt-3 text-sm leading-relaxed text-zinc-400">
+              I like understanding the problem deeply and building practical solutions.
+            </p>
+          </div>
+
+          <div>
+            <img src="/icons/plus-user-profile-svgrepo-com.svg" class="h-10 w-10 mb-4" alt="" />
+            <h3 class="text-xl font-semibold text-[#86B84C]">Teamwork</h3>
+            <p class="mt-3 text-sm leading-relaxed text-zinc-400">
+              Leadership and collaboration with diverse teams.
+            </p>
+          </div>
+
+          <div>
+            <img src="/icons/alt-square-quill-svgrepo-com.svg" class="h-10 w-10 mb-4" alt="" />
+            <h3 class="text-xl font-semibold text-[#86B84C]">Continuous learning</h3>
+            <p class="mt-3 text-sm leading-relaxed text-zinc-400">
+              Always learning new tools and better practices.
+            </p>
+          </div>
+
+          <div>
+            <img src="/icons/left-text-bubble-svgrepo-com.svg" class="h-10 w-10 mb-4" alt="" />
+            <h3 class="text-xl font-semibold text-[#86B84C]">Purposeful leadership</h3>
+            <p class="mt-3 text-sm leading-relaxed text-zinc-400">
+              Experience guiding teams through real projects.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- SKILLS -->
+        <div class="mt-12 flex flex-wrap gap-3">
+
+          <span class="rounded-full border border-white/10 px-4 py-2 text-sm bg-[#111]">Java</span>
+          <span class="rounded-full border border-white/10 px-4 py-2 text-sm bg-[#111]">Python</span>
+          <span class="rounded-full border border-white/10 px-4 py-2 text-sm bg-[#111]">HTML</span>
+          <span class="rounded-full border border-white/10 px-4 py-2 text-sm bg-[#111]">CSS</span>
+          <span class="rounded-full border border-white/10 px-4 py-2 text-sm bg-[#111]">Astro</span>
+          <span class="rounded-full border border-white/10 px-4 py-2 text-sm bg-[#111]">Git</span>
+          <span class="rounded-full border border-white/10 px-4 py-2 text-sm bg-[#111]">GitHub</span>
+          <span class="rounded-full border border-white/10 px-4 py-2 text-sm bg-[#111]">VS Code</span>
+          <span class="rounded-full border border-white/10 px-4 py-2 text-sm bg-[#111]">Android Studio</span>
+          <span class="rounded-full border border-white/10 px-4 py-2 text-sm bg-[#111]">Notion</span>
+
+        </div>
+
+        <!-- INFO BAR -->
+        <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4 reveal">
+
+          <!-- UNIVERSITY -->
+          <div class="rounded-2xl border border-white/10 bg-[#111] p-5">
+            <div class="flex items-start gap-4">
+              <img src="/icons/star-svgrepo-com.svg" class="h-8 w-8 mt-1" alt="University" />
+
+              <div>
+                <p class="text-sm text-zinc-500">University</p>
+                <p class="mt-1 font-semibold">Tecmilenio</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- LANGUAGES -->
+          <div class="rounded-2xl border border-white/10 bg-[#111] p-5">
+            <div class="flex items-start gap-4">
+              <img src="/icons/earth-svgrepo-com.svg" class="h-8 w-8 mt-1" alt="Languages" />
+
+              <div>
+                <p class="text-sm text-zinc-500">Languages</p>
+                <p class="mt-1 font-semibold">Spanish / English B2+</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- AVAILABILITY -->
+          <div class="rounded-2xl border border-white/10 bg-[#111] p-5">
+            <div class="flex items-start gap-4">
+              <img src="/icons/watch-svgrepo-com.svg" class="h-8 w-8 mt-1" alt="Availability" />
+
+              <div>
+                <p class="text-sm text-zinc-500">Availability</p>
+                <p class="mt-1 font-semibold">Part-time / Freelance</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- LOCATION -->
+          <div class="rounded-2xl border border-white/10 bg-[#111] p-5">
+            <div class="flex items-start gap-4">
+              <img src="/icons/location-point-svgrepo-com.svg" class="h-8 w-8 mt-1" alt="Location" />
+
+              <div>
+                <p class="text-sm text-zinc-500">Location</p>
+                <p class="mt-1 font-semibold">Mexico City / Remote</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 md:pb-24">
+      <div class="rounded-[28px] border border-white/10 bg-[#0b0b0b] p-5 sm:p-8 md:rounded-[32px] md:p-10">
+
+        <div class="grid items-center gap-8 lg:grid-cols-[1fr_auto] reveal">
+
+          <!-- TEXT -->
+          <div>
+            <h2 class="text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">
+              Have a project in mind?
+            </h2>
+
+            <p class="mt-4 max-w-2xl text-lg text-zinc-400">
+              Available for part-time, freelance, and remote opportunities.
+            </p>
+          </div>
+
+          <!-- BUTTON -->
+          <div>
+            <a
+              href="mailto:r.servin19@hotmail.com"
+              class="inline-flex w-full justify-center rounded-2xl bg-[#86B84C] px-8 py-4 text-lg font-semibold text-black transition hover:opacity-90 sm:w-auto"
+            >
+              Let's talk →
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 py-8">
+      <div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 text-sm text-zinc-500 sm:px-6 md:flex-row md:items-center md:justify-between">
+
+        <div>
+          <p class="font-medium text-zinc-300">Regina Servín</p>
+          <p>Software Developer</p>
+        </div>
+
+        <div class="flex items-center gap-5">
+          <a
+            href="https://github.com/Regirex21"
+            target="_blank"
+            class="hover:text-[#86B84C] transition"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/regina-servín/"
+            target="_blank"
+            class="hover:text-[#86B84C] transition"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            href="mailto:r.servin19@hotmail.com"
+            class="hover:text-[#86B84C] transition"
+          >
+            Email
+          </a>
+        </div>
+
+        <p>©2026</p>
+
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+/* EMAIL COPY */
+const email = "r.servin19@hotmail.com";
+
+function bindCopy(id: string) {
+  const btn = document.getElementById(id);
+
+  if (!btn) return;
+
+  btn.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(email);
+
+    const original = btn.textContent;
+    btn.textContent = "Copied!";
+
+    setTimeout(() => {
+      btn.textContent = original;
+    }, 1600);
+  });
+}
+
+bindCopy("copyEmail");
+bindCopy("copyEmail2");
+
+
+/* HERO TYPING */
+const code = `const Regina = {
+  role: "Junior Developer",
+  skills: ["Java", "Python", "Astro"],
+  teamwork: true,
+  leadership: true,
+  available: true
+};`;
+
+const target = document.getElementById("typingCode") as HTMLElement | null;
+
+if (target) {
+  let i = 0;
+
+  function typeCode() {
+    if (i < code.length) {
+      if (!target) return;
+
+      target.textContent += code.charAt(i);
+      i++;
+      setTimeout(typeCode, 28);
+    }
+  }
+
+  typeCode();
+}
+
+
+/* HERO CARD SMOOTH PARALLAX */
+const wrap = document.getElementById("heroCardWrap") as HTMLDivElement | null;
+const card = document.getElementById("heroCard") as HTMLDivElement | null;
+
+if (wrap && card) {
+  let targetX = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+  function animate() {
+    currentX += (targetX - currentX) * 0.06;
+    currentY += (targetY - currentY) * 0.06;
+
+    if (!card) return;
+
+    card.style.transform = `
+      rotateX(${currentY}deg)
+      rotateY(${currentX}deg)
+      translateY(-4px)
+    `;
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+
+  wrap.addEventListener("mousemove", (e) => {
+    const rect = wrap.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    targetX = (x - centerX) / 28;
+    targetY = -(y - centerY) / 28;
+  });
+
+  wrap.addEventListener("mouseleave", () => {
+    targetX = 0;
+    targetY = 0;
+  });
+}
+
+
+/* SCROLL REVEAL */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".reveal").forEach((el) => {
+  observer.observe(el);
+});
+
+
+/* NAVBAR SCROLL EFFECT */
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+  if (!navbar) return;
+
+  if (window.scrollY > 30) {
+    navbar.classList.add(
+      "bg-black/80",
+      "border-white/10",
+      "shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
+    );
+  } else {
+    navbar.classList.remove(
+      "bg-black/80",
+      "border-white/10",
+      "shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
+    );
+  }
+});
+</script>
+</Layout>

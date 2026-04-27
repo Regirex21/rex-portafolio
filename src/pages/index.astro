@@ -36,9 +36,13 @@ import Layout from "../layouts/Layout.astro";
         <!-- ACTIONS -->
         <div class="hidden md:flex items-center gap-3">
 
-          <div class="rounded-xl border border-white/10 px-4 py-2 text-sm text-zinc-300">
+          <a
+            href="/en/"
+            aria-label="Switch to English"
+            class="rounded-xl border border-white/10 px-4 py-2 text-sm text-zinc-300 transition hover:border-[#86B84C] hover:text-white"
+          >
             ES <span class="px-1 text-zinc-600">|</span> EN
-          </div>
+          </a>
 
           <a
             href="https://github.com/Regirex21"
@@ -106,6 +110,16 @@ import Layout from "../layouts/Layout.astro";
               Ver proyectos →
             </a>
 
+            <a
+              href="https://drive.google.com/file/d/1-cfIBrOBDZOU68XzitoP7hClY3zenee8/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full rounded-2xl border border-white/10 px-6 py-4 text-center text-base font-semibold text-white transition hover:border-[#86B84C] hover:text-[#86B84C] sm:w-auto sm:px-8 sm:text-lg"
+            >
+              Ver CV
+            </a>
+
+            
               <!-- LINKEDIN -->
             <a
               href="https://www.linkedin.com/in/regina-servín/"
