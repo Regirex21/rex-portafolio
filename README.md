@@ -1,4 +1,3 @@
-````md id="rm1"
 # Regina Servín Portfolio
 
 Modern personal portfolio built with Astro and Tailwind CSS.
@@ -10,7 +9,6 @@ Designed to showcase projects, skills, experience, and professional profile with
 [View Portfolio](hhttps://rex-portafolio.vercel.app)
 
 ## Preview
-
 - Responsive design
 - English / Spanish structure
 - Smooth animations
