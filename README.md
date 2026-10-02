@@ -1,110 +1,64 @@
-# Regina Servín Portfolio
+# Regina Servín · Portfolio
 
-Modern personal portfolio built with Astro and Tailwind CSS.
+Personal portfolio built with Astro and Tailwind CSS, in Spanish and English.
 
-Designed to showcase projects, skills, experience, and professional profile with a premium responsive experience for desktop and mobile.
+**Live site:** [rex-portafolio.vercel.app](https://rex-portafolio.vercel.app)
 
-## Live Site
+## Tech stack
 
-[View Portfolio](hhttps://rex-portafolio.vercel.app)
-
-## Preview
-- Responsive design
-- English / Spanish structure
-- Smooth animations
-- Mobile optimized
-- Fast static performance
-
-## Tech Stack
-
-- Astro
-- Tailwind CSS
+- Astro 6
+- Tailwind CSS 4
 - TypeScript
 - Vercel
 
 ## Features
 
-- Multi-page portfolio
-- Projects showcase
-- About page
-- Contact page
-- Resume button
-- GitHub / LinkedIn integration
-- Smooth UI interactions
-- Responsive layout
-- SEO-ready structure
+- Bilingual (ES at `/`, EN at `/en/`) with `hreflang` alternates
+- Single content source: every page reads from `src/data/site.ts`
+- Projects, experience timeline, skills, education and certifications
+- Downloadable resume in both languages (`public/files/`)
+- Open Graph / Twitter preview image, canonical URLs and favicon
+- Responsive layout, scroll reveal and `prefers-reduced-motion` support
 
-## Project Structure
+## Project structure
 
 ```text
 /
 ├── public/
-│   ├── components/
+│   ├── components/      # project screenshots (.webp)
+│   ├── files/           # resume PDFs (ES / EN)
 │   ├── icons/
-│   └── files/
-│
+│   └── og.png           # social preview image
 ├── src/
+│   ├── components/      # Home, Projects, About, Contact (take a `lang` prop)
+│   ├── data/
+│   │   └── site.ts      # ← edit content here
 │   ├── layouts/
-│   │   └── Layout.astro
-│   │
-│   └── pages/
-│       ├── index.astro
-│       ├── about.astro
-│       ├── projects.astro
-│       ├── contact.astro
-│       └── en/
-│           ├── index.astro
-│           ├── about.astro
-│           ├── projects.astro
-│           └── contact.astro
-│
+│   │   └── Layout.astro # nav, footer, SEO tags, shared scripts
+│   ├── pages/           # thin wrappers: /, /projects, /about, /contact
+│   │   └── en/          # same pages with lang="en"
+│   └── styles/
 └── package.json
-````
+```
 
-## Getting Started
+## Updating content
 
-Install dependencies:
+1. Edit `src/data/site.ts` (links, experience, projects, skills, certifications).
+2. To replace the resume, overwrite the PDFs in `public/files/` keeping the same names.
+3. Run `npm run build` to check everything compiles.
+
+## Getting started
 
 ```bash
 npm install
-```
-
-Run development server:
-
-```bash
 npm run dev
-```
-
-Build for production:
-
-```bash
 npm run build
-```
-
-Preview production build:
-
-```bash
 npm run preview
 ```
-
-## Customization
-
-You can easily update:
-
-* Text content
-* Colors
-* Projects
-* Resume link
-* Social links
-* Language versions
-
-## Purpose
-
-This portfolio was created to present my work professionally and open opportunities in software development, remote work, internships, and freelance projects.
 
 ## Author
 
 **Regina Servín**
 
-* GitHub: [https://github.com/Regirex21](https://github.com/Regirex21)
-* LinkedIn: [https://www.linkedin.com/in/regina-servín/](https://www.linkedin.com/in/regina-servín/)
+- GitHub: [Regirex21](https://github.com/Regirex21)
+- LinkedIn: [regina-servín](https://www.linkedin.com/in/regina-servín/)

@@ -1,34 +1,37 @@
 ---
 import "../styles/global.css";
+import { links, paths, profile, t, type Lang } from "../data/site";
+
+interface Props {
+  title?: string;
+  description?: string;
+  lang?: Lang;
+}
 
 const {
   title = "Regina Servín | Portafolio",
-  description = "Portafolio de Regina Servín, estudiante de ingeniería en desarrollo de software.",
-  lang = "es"
+  description = "Portafolio de Regina Servín, desarrolladora de software (backend y web) y Head Coach de ARIA STEAMex, FRC 11040.",
+  lang = "es",
 } = Astro.props;
 
 const isEnglish = lang === "en";
+const p = paths(lang);
 const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
-const languagePath = isEnglish
-  ? currentPath.replace(/^\/en/, "") || "/"
-  : currentPath === "/"
-    ? "/en/"
-    : `/en${currentPath}`;
+const esPath = currentPath.replace(/^\/en/, "") || "/";
+const enPath = esPath === "/" ? "/en/" : `/en${esPath}`;
+const languagePath = isEnglish ? esPath : enPath;
 
-const nav = {
-  home: isEnglish ? "Home" : "Inicio",
-  projects: isEnglish ? "Projects" : "Proyectos",
-  about: isEnglish ? "About me" : "Sobre mí",
-  contact: isEnglish ? "Contact" : "Contacto",
-};
+const site = Astro.site ?? new URL(links.site);
+const canonical = new URL(Astro.url.pathname, site).href;
+const ogImage = new URL("/og.png", site).href;
 
-const paths = {
-  home: isEnglish ? "/en/" : "/",
-  projects: isEnglish ? "/en/projects" : "/projects",
-  about: isEnglish ? "/en/about" : "/about",
-  contact: isEnglish ? "/en/contact" : "/contact",
-  language: languagePath,
-};
+const nav = [
+  { href: p.home, label: isEnglish ? "Home" : "Inicio" },
+  { href: p.projects, label: isEnglish ? "Projects" : "Proyectos" },
+  { href: p.about, label: isEnglish ? "About me" : "Sobre mí" },
+  { href: p.contact, label: isEnglish ? "Contact" : "Contacto" },
+];
+const isActive = (href: string) => (href.replace(/\/$/, "") || "/") === currentPath;
 ---
 
 <!doctype html>
@@ -36,118 +39,144 @@ const paths = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Regina Servín" />
+    <meta name="theme-color" content="#040404" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="es" href={new URL(esPath, site).href} />
+    <link rel="alternate" hreflang="en" href={new URL(enPath, site).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL(esPath, site).href} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={isEnglish ? "en_US" : "es_MX"} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
   </head>
 
-  <body class="bg-[#040404] text-white antialiased selection:bg-[#86B84C] selection:text-black">
+  <body class="relative bg-[#040404] text-white antialiased selection:bg-[#86B84C] selection:text-black">
 
-    <!-- NAVBAR GLOBAL -->
     <header
       id="navbar"
       class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#040404]/75 backdrop-blur-xl transition-all duration-300"
     >
       <nav class="mx-auto flex max-w-7xl items-center justify-center px-4 py-3 sm:px-6 md:justify-between md:py-4">
 
-        <!-- LOGO -->
-        <a href={paths.home} class="hidden min-w-0 items-center gap-3 md:flex">
+        <a href={p.home} class="hidden min-w-0 items-center gap-3 md:flex">
           <div class="rounded-xl border border-[#86B84C]/20 bg-[#86B84C]/10 px-3 py-2 text-lg font-black text-[#86B84C]">
             RS
           </div>
-
-          <span class="hidden md:block text-zinc-200 font-semibold">
-            Regina Servín
-          </span>
+          <span class="font-semibold text-zinc-200">Regina Servín</span>
         </a>
 
-        <!-- MENU -->
-        <div class="flex w-full items-center justify-center gap-2 overflow-x-auto whitespace-nowrap text-sm font-medium text-zinc-400 md:w-auto md:justify-start md:gap-8 md:overflow-visible">
-
+        <div class="flex w-full items-center justify-start gap-1.5 overflow-x-auto whitespace-nowrap text-[13px] font-medium text-zinc-400 min-[400px]:justify-center sm:gap-2 sm:text-sm md:w-auto md:justify-start md:gap-8 md:overflow-visible">
+          {nav.map((item) => (
+            <a
+              href={item.href}
+              aria-current={isActive(item.href) ? "page" : undefined}
+              class:list={[
+                "rounded-full border border-white/10 px-2.5 py-2 transition hover:text-white sm:px-3 md:border-0 md:px-0 md:py-0",
+                isActive(item.href) && "text-white",
+              ]}
+            >
+              {item.label}
+            </a>
+          ))}
           <a
-            href={paths.home}
-            class="rounded-full border border-white/10 px-3 py-2 transition hover:text-white md:border-0 md:px-0 md:py-0"
+            href={languagePath}
+            class="rounded-full border border-[#86B84C]/30 px-2.5 py-2 text-[#86B84C] transition hover:text-white sm:px-3 md:hidden"
           >
-            {nav.home}
+            {isEnglish ? "ES" : "EN"}
           </a>
-
-          <a
-            href={paths.projects}
-            class="rounded-full border border-white/10 px-3 py-2 transition hover:text-white md:border-0 md:px-0 md:py-0"
-          >
-            {nav.projects}
-          </a>
-
-          <a
-            href={paths.about}
-            class="rounded-full border border-white/10 px-3 py-2 transition hover:text-white md:border-0 md:px-0 md:py-0"
-          >
-            {nav.about}
-          </a>
-
-          <a
-            href={paths.contact}
-            class="rounded-full border border-white/10 px-3 py-2 transition hover:text-white md:border-0 md:px-0 md:py-0"
-          >
-            {nav.contact}
-          </a>
-
         </div>
 
-        <!-- RIGHT ACTIONS -->
-        <div class="hidden md:flex items-center gap-3">
-
+        <div class="hidden items-center gap-3 md:flex">
           <a
-            href={paths.language}
+            href={languagePath}
             aria-label={isEnglish ? "Cambiar a español" : "Switch to English"}
             class="rounded-xl border border-white/10 px-4 py-2 text-sm text-zinc-300 transition hover:border-[#86B84C] hover:text-white"
           >
-            {isEnglish ? "EN | ES" : "ES | EN"}
+            {isEnglish ? "EN" : "ES"} <span class="px-1 text-zinc-600">|</span> {isEnglish ? "ES" : "EN"}
           </a>
-
-          <a
-            href="https://github.com/Regirex21"
-            target="_blank"
-            class="rounded-xl border border-white/10 px-4 py-2 text-sm text-zinc-300 transition hover:border-[#86B84C] hover:text-white"
-          >
+          <a href={links.github} target="_blank" rel="noopener noreferrer" class="rounded-xl border border-white/10 px-4 py-2 text-sm text-zinc-300 transition hover:border-[#86B84C] hover:text-white">
             GitHub
           </a>
-
-          <a
-            href="https://www.linkedin.com/in/regina-servín/"
-            target="_blank"
-            class="rounded-xl border border-white/10 px-4 py-2 text-sm text-zinc-300 transition hover:border-[#86B84C] hover:text-white"
-          >
+          <a href={links.linkedin} target="_blank" rel="noopener noreferrer" class="rounded-xl border border-white/10 px-4 py-2 text-sm text-zinc-300 transition hover:border-[#86B84C] hover:text-white">
             LinkedIn
           </a>
-
         </div>
 
       </nav>
     </header>
 
-    <!-- PAGE CONTENT -->
-    <main class="pt-24">
+    <main class="relative overflow-x-hidden pt-24">
       <slot />
     </main>
 
-    <!-- NAVBAR SCROLL EFFECT -->
+    <footer class="border-t border-white/10 py-8">
+      <div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 text-sm text-zinc-500 sm:px-6 md:flex-row md:items-center md:justify-between">
+        <div>
+          <p class="font-medium text-zinc-300">Regina Servín</p>
+          <p>{t(profile.role, lang)}</p>
+        </div>
+        <div class="flex items-center gap-5">
+          <a href={links.github} target="_blank" rel="noopener noreferrer" class="transition hover:text-[#86B84C]">GitHub</a>
+          <a href={links.linkedin} target="_blank" rel="noopener noreferrer" class="transition hover:text-[#86B84C]">LinkedIn</a>
+          <a href={`mailto:${links.email}`} class="transition hover:text-[#86B84C]">Email</a>
+          <a href={links.cv[lang]} target="_blank" class="transition hover:text-[#86B84C]">CV</a>
+        </div>
+        <p>© {new Date().getFullYear()}</p>
+      </div>
+    </footer>
+
     <script>
       const navbar = document.getElementById("navbar");
-
-      window.addEventListener("scroll", () => {
+      const onScroll = () => {
         if (!navbar) return;
+        const scrolled = window.scrollY > 30;
+        navbar.classList.toggle("bg-[#040404]/95", scrolled);
+        navbar.classList.toggle("shadow-[0_10px_30px_rgba(0,0,0,0.35)]", scrolled);
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
 
-        if (window.scrollY > 30) {
-          navbar.classList.add(
-            "bg-[#040404]/95",
-            "shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
-          );
-        } else {
-          navbar.classList.remove(
-            "bg-[#040404]/95",
-            "shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
-          );
-        }
+      // Scroll reveal
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+      // Copy email buttons
+      document.querySelectorAll<HTMLButtonElement>("[data-copy]").forEach((btn) => {
+        btn.addEventListener("click", async () => {
+          const value = btn.dataset.copy ?? "";
+          const done = btn.dataset.done ?? "✓";
+          try {
+            await navigator.clipboard.writeText(value);
+          } catch {
+            window.location.href = `mailto:${value}`;
+            return;
+          }
+          const original = btn.textContent;
+          btn.textContent = done;
+          setTimeout(() => (btn.textContent = original), 1600);
+        });
       });
     </script>
 

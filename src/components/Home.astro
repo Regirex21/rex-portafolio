@@ -1,0 +1,327 @@
+---
+import Layout from "../layouts/Layout.astro";
+import {
+  links, profile, stats, projects, nylus, experience, skillGroups, paths, t, type Lang,
+} from "../data/site";
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const en = lang === "en";
+const p = paths(lang);
+
+const copy = {
+  title: en ? "Regina Servín | Portfolio" : "Regina Servín | Portafolio",
+  description: en
+    ? "Portfolio of Regina Servín: software developer (backend & web), founder of FIRSTHub and Head Coach of ARIA STEAMex, FRC 11040."
+    : "Portafolio de Regina Servín: desarrolladora de software (backend y web), fundadora de FIRSTHub y Head Coach de ARIA STEAMex, FRC 11040.",
+  viewProjects: en ? "View projects →" : "Ver proyectos →",
+  cv: en ? "Resume (PDF)" : "Descargar CV",
+  copy: en ? "Copy" : "Copiar",
+  copied: en ? "Copied!" : "¡Copiado!",
+  featured: en ? "Featured projects" : "Proyectos destacados",
+  seeAll: en ? "See all →" : "Ver todos →",
+  inDev: t(nylus.status, lang),
+  experience: en ? "Experience" : "Experiencia",
+  experienceSub: en
+    ? "Software in production, technical leadership and community."
+    : "Software en producción, liderazgo técnico y comunidad.",
+  why: en ? "Why work with me?" : "¿Por qué trabajar conmigo?",
+  ctaTitle: en ? "Have a project in mind?" : "¿Tienes un proyecto en mente?",
+  ctaText: en
+    ? "Open to freelance projects, remote roles and internships."
+    : "Abierta a proyectos freelance, trabajo remoto y prácticas.",
+  cta: en ? "Let's talk →" : "Hablemos →",
+};
+
+const benefits = [
+  {
+    icon: "/icons/alt-plus-lens-svgrepo-com.svg",
+    title: en ? "Production experience" : "Experiencia en producción",
+    text: en
+      ? "I build and maintain software that real teams use every day, not just class projects."
+      : "Construyo y mantengo software que equipos reales usan a diario, no solo proyectos escolares.",
+  },
+  {
+    icon: "/icons/plus-user-profile-svgrepo-com.svg",
+    title: en ? "Leadership at scale" : "Liderazgo a escala",
+    text: en
+      ? "I coordinate 17 teams nationwide and have mentored 50+ students."
+      : "Coordino 17 equipos a nivel nacional y he mentoreado a más de 50 estudiantes.",
+  },
+  {
+    icon: "/icons/alt-square-quill-svgrepo-com.svg",
+    title: en ? "Clear documentation" : "Documentación clara",
+    text: en
+      ? "I write the docs and guides that let others pick up a system quickly."
+      : "Escribo las guías y la documentación que permiten que otros entiendan un sistema rápido.",
+  },
+  {
+    icon: "/icons/left-text-bubble-svgrepo-com.svg",
+    title: en ? "Autonomy" : "Autonomía",
+    text: en
+      ? "I take projects from idea to deployment and own the result."
+      : "Llevo proyectos de la idea al despliegue y me hago cargo del resultado.",
+  },
+];
+
+const info = [
+  { icon: "/icons/star-svgrepo-com.svg", label: en ? "University" : "Universidad", value: t(profile.university, lang) },
+  { icon: "/icons/earth-svgrepo-com.svg", label: en ? "Languages" : "Idiomas", value: t(profile.languages, lang) },
+  { icon: "/icons/watch-svgrepo-com.svg", label: en ? "Availability" : "Disponibilidad", value: t(profile.availabilityDetail, lang) },
+  { icon: "/icons/location-point-svgrepo-com.svg", label: en ? "Location" : "Ubicación", value: t(profile.location, lang) },
+];
+
+const featured = projects.filter((x) => x.slug !== "firsthub-docs");
+const timeline = experience.slice(0, 4);
+const allSkills = skillGroups.flatMap((g) => g.items).slice(0, 18);
+
+const code = `const regina = {
+  role: "Software Developer",
+  stack: ["TypeScript", "NestJS", "PostgreSQL"],
+  building: ["Nylus", "FIRSTHub"],
+  coaching: "FRC 11040 · ARIA STEAMex",
+  openToWork: true,
+};`;
+---
+
+<Layout lang={lang} title={copy.title} description={copy.description}>
+  <div class="pointer-events-none absolute top-24 right-10 h-[560px] w-[560px] rounded-full bg-[#86B84C]/10 blur-[120px]"></div>
+  <div class="pointer-events-none absolute top-[820px] left-[-120px] h-[320px] w-[320px] rounded-full bg-[#86B84C]/5 blur-[100px]"></div>
+
+  <!-- HERO -->
+  <section class="relative mx-auto max-w-7xl px-4 pt-8 pb-16 sm:px-6 md:pb-20 md:pt-16">
+    <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+      <div>
+        <div class="mb-6 inline-flex max-w-full items-center gap-3 rounded-full border border-white/10 bg-[#101010] px-4 py-3 sm:px-5 md:mb-8">
+          <span class="h-3 w-3 rounded-full bg-[#86B84C] shadow-[0_0_15px_#86B84C]"></span>
+          <span class="text-sm font-medium text-zinc-200">{t(profile.availability, lang)}</span>
+        </div>
+
+        <h1 class="text-4xl font-black leading-[1.02] tracking-tight sm:text-5xl md:text-6xl xl:text-[4.8rem]">
+          Regina <span class="text-[#86B84C]">Servín</span>
+        </h1>
+
+        <p class="mt-6 max-w-3xl text-xl font-semibold leading-snug text-zinc-100 sm:text-2xl md:mt-8">
+          {t(profile.role, lang)}
+        </p>
+        <p class="mt-2 text-base text-zinc-400 sm:text-lg">{t(profile.study, lang)}</p>
+
+        <p class="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg md:mt-8">
+          {t(profile.tagline, lang)}
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-3 sm:gap-4 md:mt-10">
+          <a href={p.projects} class="w-full rounded-2xl bg-[#86B84C] px-6 py-4 text-center text-base font-semibold text-black shadow-[0_0_24px_rgba(134,184,76,0.18)] transition hover:scale-[1.02] hover:bg-[#93c957] sm:w-auto sm:px-8 sm:text-lg">
+            {copy.viewProjects}
+          </a>
+          <a href={links.cv[lang]} target="_blank" class="w-full rounded-2xl border border-white/10 px-6 py-4 text-center text-base font-semibold text-white transition hover:border-[#86B84C] hover:text-[#86B84C] sm:w-auto sm:px-8 sm:text-lg">
+            {copy.cv}
+          </a>
+          <a href={links.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="flex h-[58px] w-[58px] items-center justify-center rounded-2xl border border-white/10 bg-[#101010] transition hover:border-[#86B84C]">
+            <img src="/icons/icons8-linkedin (1).svg" alt="" class="h-9 w-9" />
+          </a>
+          <a href={links.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="flex h-[58px] w-[58px] items-center justify-center rounded-2xl border border-white/10 bg-[#101010] transition hover:border-[#86B84C]">
+            <img src="/icons/github-142-svgrepo-com.svg" alt="" class="h-8 w-8" />
+          </a>
+        </div>
+
+        <div class="mt-8 flex max-w-xl flex-col gap-3 rounded-2xl border border-white/10 bg-[#101010] px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-5">
+          <span class="break-all text-zinc-300">{links.email}</span>
+          <button type="button" data-copy={links.email} data-done={copy.copied} class="font-medium text-[#86B84C] transition hover:opacity-80">
+            {copy.copy}
+          </button>
+        </div>
+      </div>
+
+      <div class="hidden justify-center lg:flex">
+        <div id="heroCardWrap" class="relative w-full max-w-xl [perspective:1400px]">
+          <div class="pointer-events-none absolute inset-0 rounded-[32px] bg-[#86B84C]/8 blur-[90px]"></div>
+          <div id="heroCard" class="relative rounded-[32px] border border-white/10 bg-[#090909] p-8 shadow-[0_30px_90px_rgba(0,0,0,0.55)] transition-transform duration-200">
+            <div class="mb-8 flex gap-2">
+              <div class="h-3 w-3 rounded-full bg-[#8b2a2a]"></div>
+              <div class="h-3 w-3 rounded-full bg-[#8b6a2a]"></div>
+              <div class="h-3 w-3 rounded-full bg-[#2f8b2a]"></div>
+            </div>
+            <p class="mb-6 text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">Developer Profile</p>
+            <pre class="min-h-[248px] overflow-hidden rounded-2xl bg-[#050505] p-6 text-[15px] leading-8 text-zinc-300"><code id="typingCode" data-code={code}></code><span class="animate-pulse text-[#86B84C]">|</span></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 md:pb-24 reveal">
+    <div class="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+      {stats.map((s) => (
+        <div class="rounded-2xl border border-white/10 bg-[#0b0b0b] p-4 sm:p-6">
+          <p class="text-3xl sm:text-4xl font-black text-[#86B84C]">{s.value}</p>
+          <p class="mt-2 text-sm leading-relaxed text-zinc-400">{t(s.label, lang)}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 md:pb-28 reveal">
+    <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between md:mb-10">
+      <h2 class="text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">{copy.featured}</h2>
+      <a href={p.projects} class="text-[#86B84C] transition hover:opacity-80">{copy.seeAll}</a>
+    </div>
+
+    <div class="grid gap-5 md:grid-cols-2 lg:gap-6">
+      <!-- NYLUS -->
+      <a href={`${p.projects}#nylus`} class="group flex flex-col rounded-3xl border border-white/10 bg-[#0b0b0b] p-4 transition hover:-translate-y-1 hover:border-[#86B84C]">
+        <div class="flex flex-col justify-between gap-4 rounded-2xl border border-white/5 bg-[#050505] p-5 font-mono text-xs sm:h-56 sm:text-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-zinc-500">nylus/apps/api</span>
+            <span class="rounded-full border border-[#86B84C]/30 bg-[#86B84C]/10 px-3 py-1 text-xs text-[#86B84C]">{copy.inDev}</span>
+          </div>
+          <div class="grid grid-cols-2 gap-x-4 gap-y-1 text-zinc-400">
+            {nylus.modules.map((m) => (
+              <span><span class={m.done ? "text-[#86B84C]" : "text-zinc-600"}>{m.done ? "✓" : "○"}</span> {m.name}</span>
+            ))}
+          </div>
+        </div>
+        <h3 class="mt-5 text-2xl font-bold transition group-hover:text-[#86B84C]">Nylus</h3>
+        <p class="mt-3 text-zinc-400">{t(nylus.summary, lang)}</p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          {nylus.tags.slice(0, 4).map((tag) => <span class="rounded-full border border-white/10 px-3 py-1 text-xs text-zinc-300">{tag}</span>)}
+        </div>
+      </a>
+
+      {featured.map((proj) => (
+        <a href={proj.url} target="_blank" rel="noopener noreferrer" class="group flex flex-col rounded-3xl border border-white/10 bg-[#0b0b0b] p-4 transition hover:-translate-y-1 hover:border-[#86B84C]">
+          <img src={proj.image} alt={proj.name} loading="lazy" width="1200" height="606" class="h-44 w-full rounded-2xl object-cover object-top sm:h-56" />
+          <h3 class="mt-5 text-2xl font-bold transition group-hover:text-[#86B84C]">{proj.name}</h3>
+          <p class="mt-3 text-zinc-400">{t(proj.summary, lang)}</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            {proj.tags.slice(0, 4).map((tag) => <span class="rounded-full border border-white/10 px-3 py-1 text-xs text-zinc-300">{tag}</span>)}
+          </div>
+        </a>
+      ))}
+
+      <!-- DOCS (compact) -->
+      <a href={links.firsthubDocs} target="_blank" rel="noopener noreferrer" class="group flex flex-col justify-between rounded-3xl border border-white/10 bg-[#0b0b0b] p-6 transition hover:-translate-y-1 hover:border-[#86B84C]">
+        <div>
+          <p class="text-sm font-semibold text-[#86B84C]">firsthub.dev/docs</p>
+          <h3 class="mt-3 text-2xl font-bold transition group-hover:text-[#86B84C]">FIRSTHub Docs</h3>
+          <p class="mt-3 text-zinc-400">{t(projects.find((x) => x.slug === "firsthub-docs")!.description, lang)}</p>
+        </div>
+        <span class="mt-6 text-[#86B84C]">{en ? "Read the docs →" : "Ver documentación →"}</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 md:pb-28 reveal">
+    <div class="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <h2 class="text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">{copy.experience}</h2>
+        <p class="mt-3 text-zinc-400">{copy.experienceSub}</p>
+      </div>
+      <a href={p.about} class="text-[#86B84C] transition hover:opacity-80">{en ? "Full journey →" : "Trayectoria completa →"}</a>
+    </div>
+    <div class="grid gap-5 md:grid-cols-2">
+      {timeline.map((role) => (
+        <div class="rounded-3xl border border-white/10 bg-[#0b0b0b] p-6">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="text-xl font-bold">{t(role.title, lang)}</h3>
+            <span class="text-sm text-zinc-500">{t(role.date, lang)}</span>
+          </div>
+          <p class="mt-1 font-medium text-[#86B84C]">{role.org}</p>
+          <p class="mt-3 text-sm leading-relaxed text-zinc-400">{t(role.points[0], lang)}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="about" class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 md:pb-28">
+    <div class="rounded-[28px] border border-white/10 bg-[#0b0b0b] p-5 sm:p-8 md:rounded-[32px] md:p-10 reveal">
+      <h2 class="text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">{copy.why}</h2>
+
+      <div class="mt-10 grid gap-8 sm:grid-cols-2 xl:grid-cols-4 md:mt-12">
+        {benefits.map((b) => (
+          <div>
+            <img src={b.icon} alt="" class="mb-4 h-10 w-10" />
+            <h3 class="text-xl font-semibold text-[#86B84C]">{b.title}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-zinc-400">{b.text}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 flex flex-wrap gap-3">
+        {allSkills.map((s) => <span class="rounded-full border border-white/10 bg-[#111] px-4 py-2 text-sm">{s}</span>)}
+      </div>
+
+      <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        {info.map((i) => (
+          <div class="rounded-2xl border border-white/10 bg-[#111] p-5">
+            <div class="flex items-start gap-4">
+              <img src={i.icon} alt="" class="mt-1 h-8 w-8" />
+              <div>
+                <p class="text-sm text-zinc-500">{i.label}</p>
+                <p class="mt-1 font-semibold">{i.value}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 md:pb-24">
+    <div class="rounded-[28px] border border-white/10 bg-[#0b0b0b] p-5 sm:p-8 md:rounded-[32px] md:p-10 reveal">
+      <div class="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
+        <div>
+          <h2 class="text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">{copy.ctaTitle}</h2>
+          <p class="mt-4 max-w-2xl text-lg text-zinc-400">{copy.ctaText}</p>
+        </div>
+        <a href={p.contact} class="inline-flex w-full justify-center rounded-2xl bg-[#86B84C] px-8 py-4 text-lg font-semibold text-black transition hover:opacity-90 sm:w-auto">
+          {copy.cta}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const target = document.getElementById("typingCode");
+    const code = target?.dataset.code ?? "";
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (target) {
+      if (reduce) {
+        target.textContent = code;
+      } else {
+        let i = 0;
+        const type = () => {
+          if (i < code.length) {
+            target.textContent += code.charAt(i++);
+            setTimeout(type, 24);
+          }
+        };
+        type();
+      }
+    }
+
+    const wrap = document.getElementById("heroCardWrap");
+    const card = document.getElementById("heroCard");
+    if (wrap && card && !reduce) {
+      let tx = 0, ty = 0, cx = 0, cy = 0;
+      const animate = () => {
+        cx += (tx - cx) * 0.06;
+        cy += (ty - cy) * 0.06;
+        card.style.transform = `rotateX(${cy}deg) rotateY(${cx}deg) translateY(-4px)`;
+        requestAnimationFrame(animate);
+      };
+      animate();
+      wrap.addEventListener("mousemove", (e) => {
+        const r = wrap.getBoundingClientRect();
+        tx = (e.clientX - r.left - r.width / 2) / 28;
+        ty = -(e.clientY - r.top - r.height / 2) / 28;
+      });
+      wrap.addEventListener("mouseleave", () => { tx = 0; ty = 0; });
+    }
+  </script>
+</Layout>

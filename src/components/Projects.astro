@@ -1,0 +1,159 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { projects, nylus, paths, t, type Lang } from "../data/site";
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const en = lang === "en";
+const p = paths(lang);
+
+const copy = {
+  title: en ? "Projects | Regina Servín" : "Proyectos | Regina Servín",
+  description: en
+    ? "Projects by Regina Servín: Nylus (multi-tenant SaaS), FIRSTHub, FIRSTHub Docs and the ARIA STEAMex website."
+    : "Proyectos de Regina Servín: Nylus (SaaS multi-tenant), FIRSTHub, FIRSTHub Docs y el sitio de ARIA STEAMex.",
+  badge: en ? "Projects" : "Proyectos",
+  h1a: en ? "Real projects." : "Proyectos reales.",
+  h1b: en ? "Useful solutions." : "Soluciones útiles.",
+  intro: en
+    ? "From a multi-tenant backend to community platforms used by robotics teams across Mexico. I like building tools that improve processes and get used."
+    : "Desde un backend multi-tenant hasta plataformas comunitarias que usan equipos de robótica en todo México. Me gusta construir herramientas que mejoren procesos y que la gente realmente use.",
+  featured: en ? "Featured project" : "Proyecto destacado",
+  modules: en ? "Module status" : "Estado de módulos",
+  private: en ? "Private repository · happy to walk you through the architecture" : "Repositorio privado · con gusto te explico la arquitectura",
+  view: en ? "Visit site →" : "Ver proyecto →",
+  applied: en ? "Applied experience" : "Experiencia aplicada",
+  learned: en ? "What building has taught me" : "Lo que he aprendido construyendo",
+  ctaTitle: en ? "Shall we work together?" : "¿Trabajamos juntos?",
+  ctaText: en ? "Open to freelance projects, remote roles and internships." : "Abierta a proyectos freelance, trabajo remoto y prácticas.",
+  cta: en ? "Contact →" : "Contactar →",
+};
+
+const applied = [
+  {
+    title: en ? "Internal tools at ITESA" : "Herramientas internas en ITESA",
+    text: en
+      ? "Corporate website plus internal tools for inventory, orders and quotes, with Python automations that remove manual work from daily operations."
+      : "Sitio corporativo y herramientas internas de inventarios, pedidos y cotizaciones, con automatizaciones en Python que eliminan trabajo manual de la operación diaria.",
+  },
+  {
+    title: en ? "FIRST Robotics leadership" : "Liderazgo en FIRST Robotics",
+    text: en
+      ? "Head Coach of FRC 11040 and national coordinator for 17 FTC teams: planning, training programs, documentation and problem-solving under competition pressure."
+      : "Head Coach de FRC 11040 y coordinadora nacional de 17 equipos FTC: planeación, programas de capacitación, documentación y resolución de problemas bajo presión de competencia.",
+  },
+];
+
+const lessons = en
+  ? ["Visual clarity matters.", "Simple systems scale better.", "Iterating improves any product.", "Users always come first."]
+  : ["La claridad visual importa.", "Los sistemas simples escalan mejor.", "Iterar mejora cualquier producto.", "El usuario siempre va primero."];
+---
+
+<Layout lang={lang} title={copy.title} description={copy.description}>
+
+  <section class="relative mx-auto max-w-7xl px-4 pt-6 pb-16 sm:px-6 md:pt-10 md:pb-20">
+    <div class="pointer-events-none absolute right-[-120px] top-10 h-[320px] w-[320px] rounded-full bg-[#86B84C]/10 blur-3xl sm:right-0 sm:h-[420px] sm:w-[420px]"></div>
+    <div class="relative z-10 max-w-4xl">
+      <span class="inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-[#86B84C]">{copy.badge}</span>
+      <h1 class="mt-6 text-4xl font-black leading-tight sm:text-5xl md:text-6xl">
+        {copy.h1a}<br /><span class="text-[#86B84C]">{copy.h1b}</span>
+      </h1>
+      <p class="mt-6 max-w-3xl text-base leading-7 text-zinc-400 sm:text-lg sm:leading-8">{copy.intro}</p>
+    </div>
+  </section>
+
+  <!-- NYLUS -->
+  <section id="nylus" class="mx-auto max-w-7xl scroll-mt-28 px-4 pb-16 sm:px-6 md:pb-20 reveal">
+    <div class="rounded-[28px] border border-white/10 bg-white/[0.03] p-4 sm:p-6 md:rounded-[36px] lg:p-10">
+      <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+
+        <div class="rounded-2xl border border-white/10 bg-[#050505] p-6 font-mono text-sm md:rounded-3xl">
+          <div class="mb-5 flex items-center justify-between">
+            <span class="text-zinc-500">{copy.modules}</span>
+            <span class="rounded-full border border-[#86B84C]/30 bg-[#86B84C]/10 px-3 py-1 text-xs text-[#86B84C]">{t(nylus.status, lang)}</span>
+          </div>
+          <ul class="space-y-2">
+            {nylus.modules.map((m) => (
+              <li class="flex items-center justify-between border-b border-white/5 pb-2">
+                <span class="text-zinc-300">/{m.name}</span>
+                <span class={m.done ? "text-[#86B84C]" : "text-zinc-600"}>{m.done ? (en ? "done" : "listo") : (en ? "next" : "siguiente")}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <span class="text-sm font-semibold text-[#86B84C]">{copy.featured}</span>
+          <h2 class="mt-4 text-3xl font-black sm:text-4xl">Nylus</h2>
+          <p class="mt-5 leading-8 text-zinc-400">{t(nylus.summary, lang)}</p>
+          <ul class="mt-6 space-y-3 text-zinc-300">
+            {nylus.features.map((f) => (
+              <li class="flex gap-3"><span class="text-[#86B84C]">→</span><span>{t(f, lang)}</span></li>
+            ))}
+          </ul>
+          <div class="mt-6 flex flex-wrap gap-3">
+            {nylus.tags.map((tag) => <span class="rounded-full border border-white/10 px-4 py-2 text-sm">{tag}</span>)}
+          </div>
+          <p class="mt-6 text-sm text-zinc-500">{copy.private}</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GRID -->
+  <section class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 md:pb-20">
+    <div class="grid gap-8 lg:grid-cols-3">
+      {projects.map((proj) => (
+        <div class="flex flex-col rounded-[28px] border border-white/10 bg-white/[0.03] p-4 sm:p-6 md:rounded-[32px] reveal">
+          <img src={proj.image} alt={proj.name} loading="lazy" width="1200" height="606" class="h-44 w-full rounded-2xl border border-white/10 object-cover object-top sm:h-52" />
+          <h3 class="mt-6 text-2xl font-black">{proj.name}</h3>
+          <p class="mt-4 flex-1 leading-7 text-zinc-400">{t(proj.description, lang)}</p>
+          <div class="mt-5 flex flex-wrap gap-2">
+            {proj.tags.map((tag) => <span class="rounded-full border border-white/10 px-3 py-1.5 text-sm">{tag}</span>)}
+          </div>
+          <a href={proj.url} target="_blank" rel="noopener noreferrer" class="mt-6 inline-block text-[#86B84C] transition hover:opacity-80">
+            {copy.view}
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- APPLIED -->
+  <section class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 md:pb-20 reveal">
+    <div class="rounded-[28px] border border-white/10 bg-white/[0.03] p-5 sm:p-8 md:rounded-[32px]">
+      <h2 class="text-3xl font-black sm:text-4xl">{copy.applied}</h2>
+      <div class="mt-10 grid gap-8 md:grid-cols-2">
+        {applied.map((a) => (
+          <div>
+            <h3 class="text-2xl font-bold text-[#86B84C]">{a.title}</h3>
+            <p class="mt-4 leading-8 text-zinc-400">{a.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- LESSONS -->
+  <section class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 md:pb-20 reveal">
+    <h2 class="text-3xl font-black sm:text-4xl">{copy.learned}</h2>
+    <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      {lessons.map((l) => <div class="rounded-3xl border border-white/10 bg-white/[0.03] p-6">{l}</div>)}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 md:pb-24">
+    <div class="rounded-[28px] border border-white/10 bg-white/[0.03] p-5 sm:p-8 md:flex md:items-center md:justify-between md:rounded-[32px] md:p-10 reveal">
+      <div>
+        <h2 class="text-3xl font-black sm:text-4xl">{copy.ctaTitle}</h2>
+        <p class="mt-4 text-zinc-400">{copy.ctaText}</p>
+      </div>
+      <a href={p.contact} class="mt-6 inline-block w-full rounded-2xl bg-[#86B84C] px-7 py-4 text-center font-semibold text-black transition hover:scale-105 sm:w-auto md:mt-0">
+        {copy.cta}
+      </a>
+    </div>
+  </section>
+
+</Layout>

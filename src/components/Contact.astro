@@ -1,0 +1,111 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { links, t, profile, type Lang } from "../data/site";
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const en = lang === "en";
+
+const copy = {
+  title: en ? "Contact | Regina Servín" : "Contacto | Regina Servín",
+  description: en
+    ? "Get in touch with Regina Servín for freelance projects, remote roles, internships or collaborations."
+    : "Ponte en contacto con Regina Servín para proyectos freelance, trabajo remoto, prácticas o colaboraciones.",
+  badge: en ? "Contact" : "Contacto",
+  h1a: en ? "Let's talk." : "Hablemos.",
+  h1b: t(profile.availability, lang) + ".",
+  intro: en
+    ? "I currently work as a web developer at ITESA and I'm open to freelance projects, remote roles and internships. If you have a role, a project or a collaboration in mind, I'd love to hear about it."
+    : "Actualmente trabajo como desarrolladora web en ITESA y estoy abierta a proyectos freelance, trabajo remoto y prácticas. Si tienes una vacante, un proyecto o una colaboración en mente, con gusto lo platicamos.",
+  info: en ? "Contact information" : "Información de contacto",
+  email: en ? "Email" : "Correo electrónico",
+  copy: en ? "Copy" : "Copiar",
+  copied: en ? "Copied!" : "¡Copiado!",
+  cv: en ? "Resume (PDF)" : "Currículum (PDF)",
+  cvAction: en ? "Download →" : "Descargar →",
+  why: en ? "What I can help with" : "En qué te puedo ayudar",
+  best: en ? "Best way to reach me:" : "Mejor vía de contacto:",
+  bestText: en ? "Email or LinkedIn." : "Correo electrónico o LinkedIn.",
+};
+
+const reasons = en
+  ? [
+      "Backend development: REST APIs with NestJS, PostgreSQL and Prisma.",
+      "Fast, responsive websites with Astro and Tailwind CSS.",
+      "Internal tools and Python automations for operations.",
+      "Technical documentation, training programs and STEM mentoring.",
+    ]
+  : [
+      "Desarrollo backend: APIs REST con NestJS, PostgreSQL y Prisma.",
+      "Sitios web rápidos y responsivos con Astro y Tailwind CSS.",
+      "Herramientas internas y automatizaciones con Python para la operación.",
+      "Documentación técnica, programas de capacitación y mentoría STEM.",
+    ];
+---
+
+<Layout lang={lang} title={copy.title} description={copy.description}>
+
+  <section class="relative mx-auto max-w-7xl px-4 pt-6 pb-16 sm:px-6 md:pt-10 md:pb-20">
+    <div class="pointer-events-none absolute left-[-120px] top-10 h-[300px] w-[300px] rounded-full bg-[#86B84C]/10 blur-3xl sm:left-0 sm:h-[360px] sm:w-[360px]"></div>
+    <div class="relative z-10 max-w-4xl">
+      <span class="inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-[#86B84C]">{copy.badge}</span>
+      <h1 class="mt-6 text-4xl font-black leading-tight sm:text-5xl md:text-6xl">
+        {copy.h1a}<br /><span class="text-[#86B84C]">{copy.h1b}</span>
+      </h1>
+      <p class="mt-6 max-w-2xl text-base leading-7 text-zinc-400 sm:text-lg sm:leading-8">{copy.intro}</p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 md:pb-20">
+    <div class="grid gap-8 lg:grid-cols-2">
+
+      <div class="rounded-[28px] border border-white/10 bg-white/[0.03] p-5 sm:p-8 md:rounded-[32px]">
+        <h2 class="text-2xl font-black sm:text-3xl">{copy.info}</h2>
+        <div class="mt-8 space-y-6">
+
+          <div class="rounded-2xl border border-white/10 bg-[#0d0d0d] p-5">
+            <p class="text-sm text-zinc-500">{copy.email}</p>
+            <div class="mt-3 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+              <a href={`mailto:${links.email}`} class="break-all text-lg font-medium text-white hover:text-[#86B84C]">{links.email}</a>
+              <button type="button" data-copy={links.email} data-done={copy.copied} class="w-full rounded-xl bg-[#86B84C] px-5 py-2 font-semibold text-black transition hover:scale-105 md:w-auto">
+                {copy.copy}
+              </button>
+            </div>
+          </div>
+
+          <a href={links.linkedin} target="_blank" rel="noopener noreferrer" class="block rounded-2xl border border-white/10 bg-[#0d0d0d] p-5 transition hover:border-[#86B84C]">
+            <p class="text-sm text-zinc-500">LinkedIn</p>
+            <p class="mt-2 break-all text-base font-medium text-white sm:text-lg">{links.linkedinLabel}</p>
+          </a>
+
+          <a href={links.github} target="_blank" rel="noopener noreferrer" class="block rounded-2xl border border-white/10 bg-[#0d0d0d] p-5 transition hover:border-[#86B84C]">
+            <p class="text-sm text-zinc-500">GitHub</p>
+            <p class="mt-2 break-all text-base font-medium text-white sm:text-lg">github.com/Regirex21</p>
+          </a>
+
+          <a href={links.cv[lang]} target="_blank" class="flex items-center justify-between rounded-2xl border border-white/10 bg-[#0d0d0d] p-5 transition hover:border-[#86B84C]">
+            <div>
+              <p class="text-sm text-zinc-500">{copy.cv}</p>
+              <p class="mt-2 text-base font-medium text-white sm:text-lg">Regina Servín · 2026</p>
+            </div>
+            <span class="text-[#86B84C]">{copy.cvAction}</span>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="rounded-[28px] border border-white/10 bg-white/[0.03] p-5 sm:p-8 md:rounded-[32px]">
+        <h2 class="text-2xl font-black sm:text-3xl">{copy.why}</h2>
+        <div class="mt-8 space-y-5 text-zinc-300">
+          {reasons.map((r) => <div class="rounded-2xl border border-white/10 bg-[#0d0d0d] p-5">{r}</div>)}
+        </div>
+        <div class="mt-8 rounded-2xl border border-[#86B84C]/20 bg-[#86B84C]/10 p-5">
+          <p class="font-semibold text-[#86B84C]">{copy.best}</p>
+          <p class="mt-2 text-zinc-200">{copy.bestText}</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
