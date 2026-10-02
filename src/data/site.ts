@@ -38,7 +38,7 @@ export const profile = {
   location: { es: "CDMX / Remoto", en: "Mexico City / Remote" },
   languages: { es: "Español / Inglés B2+", en: "Spanish / English B2+" },
   university: { es: "Tecmilenio, Campus Ferrería", en: "Tecmilenio, Ferrería Campus" },
-  current: { es: "Desarrolladora Web en ITESA", en: "Web Developer at ITESA" },
+  current: { es: "Desarrolladora de Software en ITESA", en: "Software Developer at ITESA" },
 };
 
 export const stats = [
@@ -138,7 +138,7 @@ export type Role = { title: T; org: string; date: T; points: T[]; kind: "dev" | 
 export const experience: Role[] = [
   {
     kind: "dev",
-    title: { es: "Desarrolladora Web y Automatización", en: "Web Developer & Automation" },
+    title: { es: "Desarrolladora de Software y Operaciones Digitales", en: "Software Developer & Digital Operations" },
     org: "ITESA Infraestructura",
     date: { es: "2025 – Actualidad", en: "2025 – Present" },
     points: [
@@ -210,9 +210,9 @@ export const softSkills = {
 export const certifications = [
   { name: "Database Foundations", issuer: "Oracle Academy", date: { es: "sep. 2026", en: "Sep 2026" } },
   { name: "Java Fundamentals", issuer: "Oracle Academy", date: { es: "feb. 2026", en: "Feb 2026" } },
-  { name: "Red Hat System Administration I & II (RH124 / RH134)", issuer: "Red Hat", date: { es: "feb. 2026", en: "Feb 2026" } },
+  { name: "Red Hat System Administration I (RH124)", issuer: "Red Hat", date: { es: "feb. 2026", en: "Feb 2026" } },
   { name: "AWS Academy Graduate – Cloud Foundations", issuer: "AWS Academy", date: { es: "sep. 2025", en: "Sep 2025" } },
-  { name: { es: "Fundamentos de Programación (Java / Python)", en: "Programming Fundamentals (Java / Python)" }, issuer: "Cisco Networking Academy", date: { es: "sep. 2025", en: "Sep 2025" } },
+  { name: "Python Essentials 1", issuer: "Cisco Networking Academy", date: { es: "sep. 2025", en: "Sep 2025" } },
 ];
 
 export const education = {
