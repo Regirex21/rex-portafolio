@@ -35,7 +35,7 @@ export const profile = {
   },
   availability: { es: "Abierta a nuevas oportunidades", en: "Open to new opportunities" },
   availabilityDetail: { es: "Freelance · Remoto · Prácticas", en: "Freelance · Remote · Internships" },
-  travel: { es: "Disponible para viajar", en: "Available to travel" },
+  travel: { es: "Sin disponibilidad para viajar", en: "Not available to travel" },
   location: { es: "CDMX / Remoto", en: "Mexico City / Remote" },
   languages: { es: "Español / Inglés B2+", en: "Spanish / English B2+" },
   university: { es: "Tecmilenio, Campus Ferrería", en: "Tecmilenio, Ferrería Campus" },
