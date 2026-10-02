@@ -71,8 +71,8 @@ const isActive = (href: string) => (href.replace(/\/$/, "") || "/") === currentP
       <nav class="mx-auto flex max-w-7xl items-center justify-center px-4 py-3 sm:px-6 md:justify-between md:py-4">
 
         <a href={p.home} class="hidden min-w-0 items-center gap-3 md:flex">
-          <div class="rounded-xl border border-[#86B84C]/20 bg-[#86B84C]/10 px-3 py-2 text-lg font-black text-[#86B84C]">
-            RS
+          <div aria-hidden="true" class="flex h-10 w-10 items-center justify-center rounded-xl border border-[#86B84C]/20 bg-[#86B84C]/10 font-mono text-sm font-bold text-[#86B84C]">
+            &lt;/&gt;
           </div>
           <span class="font-semibold text-zinc-200">Regina Servín</span>
         </a>
