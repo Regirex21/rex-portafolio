@@ -208,8 +208,10 @@ export const softSkills = {
 };
 
 export const certifications = [
-  { name: "AWS Academy Graduate – Cloud Foundations", issuer: "AWS Academy", date: { es: "sep. 2025", en: "Sep 2025" } },
+  { name: "Database Foundations", issuer: "Oracle Academy", date: { es: "sep. 2026", en: "Sep 2026" } },
+  { name: "Java Fundamentals", issuer: "Oracle Academy", date: { es: "feb. 2026", en: "Feb 2026" } },
   { name: "Red Hat System Administration I & II (RH124 / RH134)", issuer: "Red Hat", date: { es: "feb. 2026", en: "Feb 2026" } },
+  { name: "AWS Academy Graduate – Cloud Foundations", issuer: "AWS Academy", date: { es: "sep. 2025", en: "Sep 2025" } },
   { name: { es: "Fundamentos de Programación (Java / Python)", en: "Programming Fundamentals (Java / Python)" }, issuer: "Cisco Networking Academy", date: { es: "sep. 2025", en: "Sep 2025" } },
 ];
 
