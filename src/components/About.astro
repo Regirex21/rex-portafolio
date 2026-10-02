@@ -39,6 +39,7 @@ const quick = [
   { label: en ? "University" : "Universidad", value: t(profile.university, lang) },
   { label: en ? "Location" : "Ubicación", value: t(profile.location, lang) },
   { label: en ? "Languages" : "Idiomas", value: t(profile.languages, lang) },
+  { label: en ? "Travel" : "Viajes", value: t(profile.travel, lang) },
   { label: en ? "Availability" : "Disponibilidad", value: t(profile.availability, lang), accent: true },
 ];
 
@@ -116,7 +117,7 @@ const groups = [
         <div class="rounded-3xl border border-white/10 bg-white/[0.02] p-6">
           <h3 class="font-semibold text-[#86B84C]">{t(g.label, lang)}</h3>
           <div class="mt-4 flex flex-wrap gap-2">
-            {g.items.map((s) => <span class="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm text-zinc-300">{s}</span>)}
+            {g.items.map((s) => t(s, lang)).map((s) => <span class="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm text-zinc-300">{s}</span>)}
           </div>
         </div>
       ))}

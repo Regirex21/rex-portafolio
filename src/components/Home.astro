@@ -57,23 +57,23 @@ const benefits = [
   },
   {
     icon: "/icons/left-text-bubble-svgrepo-com.svg",
-    title: en ? "Autonomy" : "Autonomía",
+    title: en ? "Design + development" : "Diseño + desarrollo",
     text: en
-      ? "I take projects from idea to deployment and own the result."
-      : "Llevo proyectos de la idea al despliegue y me hago cargo del resultado.",
+      ? "I design the visual identity and the interface, then build it, so your project doesn't need a separate designer."
+      : "Diseño la imagen visual y la interfaz, y también la programo, así que tu proyecto no necesita un diseñador aparte.",
   },
 ];
 
 const info = [
   { icon: "/icons/star-svgrepo-com.svg", label: en ? "University" : "Universidad", value: t(profile.university, lang) },
   { icon: "/icons/earth-svgrepo-com.svg", label: en ? "Languages" : "Idiomas", value: t(profile.languages, lang) },
-  { icon: "/icons/watch-svgrepo-com.svg", label: en ? "Availability" : "Disponibilidad", value: t(profile.availabilityDetail, lang) },
+  { icon: "/icons/watch-svgrepo-com.svg", label: en ? "Availability" : "Disponibilidad", value: `${t(profile.availabilityDetail, lang)} · ${t(profile.travel, lang)}` },
   { icon: "/icons/location-point-svgrepo-com.svg", label: en ? "Location" : "Ubicación", value: t(profile.location, lang) },
 ];
 
 const featured = projects.filter((x) => x.slug !== "firsthub-docs");
 const timeline = experience.slice(0, 4);
-const allSkills = skillGroups.flatMap((g) => g.items).slice(0, 18);
+const allSkills = skillGroups.flatMap((g) => g.items.slice(0, 4).map((s) => t(s, lang)));
 
 const code = `const regina = {
   role: "Software Developer",

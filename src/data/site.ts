@@ -30,11 +30,12 @@ export const profile = {
     en: "Software Development Engineering student at Tecmilenio",
   },
   tagline: {
-    es: "Construyo APIs, plataformas web y herramientas internas que se usan en el mundo real, y lidero equipos de robótica FIRST en México.",
-    en: "I build APIs, web platforms and internal tools that get used in the real world, and I lead FIRST robotics teams in Mexico.",
+    es: "Diseño y desarrollo sitios y plataformas web completos, desde la imagen visual hasta el código, sin necesidad de un diseñador aparte. También construyo APIs y herramientas internas, y lidero equipos de robótica FIRST en México.",
+    en: "I design and build complete websites and web platforms, from the visual identity to the code, so no separate designer is needed. I also build APIs and internal tools, and lead FIRST robotics teams in Mexico.",
   },
   availability: { es: "Abierta a nuevas oportunidades", en: "Open to new opportunities" },
   availabilityDetail: { es: "Freelance · Remoto · Prácticas", en: "Freelance · Remote · Internships" },
+  travel: { es: "Disponible para viajar", en: "Available to travel" },
   location: { es: "CDMX / Remoto", en: "Mexico City / Remote" },
   languages: { es: "Español / Inglés B2+", en: "Spanish / English B2+" },
   university: { es: "Tecmilenio, Campus Ferrería", en: "Tecmilenio, Ferrería Campus" },
@@ -199,6 +200,7 @@ export const skillGroups = [
   { label: { es: "Backend y datos", en: "Backend & data" }, items: ["NestJS", "Node.js", "Express", "REST APIs", "JWT / OAuth", "PostgreSQL", "Prisma"] },
   { label: { es: "Frontend", en: "Frontend" }, items: ["Astro", "Tailwind CSS", "HTML", "CSS", "MDX"] },
   { label: { es: "DevOps y herramientas", en: "DevOps & tools" }, items: ["Git / GitHub", "Docker", "Linux", "Vercel", "Railway", "Turborepo", "Postman"] },
+  { label: { es: "Diseño", en: "Design" }, items: [{ es: "Diseño UI", en: "UI design" }, { es: "Diseño web responsivo", en: "Responsive web design" }, { es: "Identidad visual", en: "Visual identity" }, "Branding", { es: "Contenido para redes", en: "Social media content" }] as (string | { es: string; en: string })[] },
   { label: { es: "Robótica", en: "Robotics" }, items: ["WPILib", "FTC SDK", "PathPlanner", "Choreo", "Limelight", "REV Robotics"] },
 ];
 
